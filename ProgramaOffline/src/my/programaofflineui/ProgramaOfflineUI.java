@@ -30,7 +30,6 @@ public class ProgramaOfflineUI extends javax.swing.JFrame {
         CadastroAluno = new javax.swing.JPanel();
         Nome = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
-        DtNascimento = new javax.swing.JLabel();
         buttonCadastrarAluno = new javax.swing.JButton();
         nomePai = new javax.swing.JLabel();
         nomeMae = new javax.swing.JLabel();
@@ -40,6 +39,8 @@ public class ProgramaOfflineUI extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         txtCpf = new javax.swing.JTextField();
         txtRg = new javax.swing.JTextField();
+        DtNascimento = new javax.swing.JLabel();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
 
         jCheckBox1.setText("jCheckBox1");
 
@@ -59,9 +60,6 @@ public class ProgramaOfflineUI extends javax.swing.JFrame {
                 txtNomeActionPerformed(evt);
             }
         });
-
-        DtNascimento.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        DtNascimento.setText("Data de Nascimento:");
 
         buttonCadastrarAluno.setLabel("Cadastrar");
 
@@ -105,66 +103,75 @@ public class ProgramaOfflineUI extends javax.swing.JFrame {
             }
         });
 
+        DtNascimento.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        DtNascimento.setText("Data de Nascimento: ");
+
         javax.swing.GroupLayout CadastroAlunoLayout = new javax.swing.GroupLayout(CadastroAluno);
         CadastroAluno.setLayout(CadastroAlunoLayout);
         CadastroAlunoLayout.setHorizontalGroup(
             CadastroAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CadastroAlunoLayout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(buttonCadastrarAluno)
-                .addContainerGap(100, Short.MAX_VALUE))
-            .addGroup(CadastroAlunoLayout.createSequentialGroup()
-                .addComponent(nomePai)
+                .addComponent(rg, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1))
-            .addGroup(CadastroAlunoLayout.createSequentialGroup()
-                .addGroup(CadastroAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(DtNascimento)
-                    .addGroup(CadastroAlunoLayout.createSequentialGroup()
-                        .addComponent(cpf)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(CadastroAlunoLayout.createSequentialGroup()
-                        .addComponent(rg)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtRg)))
+                .addComponent(txtRg, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(cpf)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(CadastroAlunoLayout.createSequentialGroup()
-                .addComponent(Nome)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNome))
-            .addGroup(CadastroAlunoLayout.createSequentialGroup()
-                .addComponent(nomeMae)
-                .addGap(1, 1, 1)
-                .addComponent(jTextField2))
+                .addGroup(CadastroAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CadastroAlunoLayout.createSequentialGroup()
+                        .addGroup(CadastroAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(CadastroAlunoLayout.createSequentialGroup()
+                                .addComponent(nomePai)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroAlunoLayout.createSequentialGroup()
+                                .addComponent(Nome)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtNome))
+                            .addGroup(CadastroAlunoLayout.createSequentialGroup()
+                                .addComponent(nomeMae)
+                                .addGap(1, 1, 1)
+                                .addComponent(jTextField2)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DtNascimento)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))
+                    .addGroup(CadastroAlunoLayout.createSequentialGroup()
+                        .addGap(190, 190, 190)
+                        .addComponent(buttonCadastrarAluno)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         CadastroAlunoLayout.setVerticalGroup(
             CadastroAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CadastroAlunoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(CadastroAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Nome, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DtNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(CadastroAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nomePai)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(CadastroAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nomeMae)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(CadastroAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CadastroAlunoLayout.createSequentialGroup()
+                        .addGroup(CadastroAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Nome, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DtNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(CadastroAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nomePai)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(CadastroAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nomeMae)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CadastroAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cpf)
-                    .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(CadastroAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rg)
                     .addComponent(txtRg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
-                .addComponent(buttonCadastrarAluno))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addComponent(buttonCadastrarAluno)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -173,7 +180,7 @@ public class ProgramaOfflineUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(CadastroAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 251, Short.MAX_VALUE))
+                .addGap(0, 10, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,6 +211,7 @@ public class ProgramaOfflineUI extends javax.swing.JFrame {
         if(!(Character.isDigit(c) || c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE || tamCpf>10){
             getToolkit().beep();
             evt.consume();
+            
         }
     }//GEN-LAST:event_txtCpfKeyTyped
 
@@ -264,6 +272,7 @@ public class ProgramaOfflineUI extends javax.swing.JFrame {
     private javax.swing.JLabel cpf;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox jComboBox1;
+    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel nomeMae;
