@@ -239,14 +239,7 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
     }//GEN-LAST:event_txtRgActionPerformed
 
     private void txtRgKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRgKeyTyped
-        char c = evt.getKeyChar();
-        String rgn = txtRg.getText();
-        int tamRg = rgn.length();
-        if(!(Character.isDigit(c) || c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE || tamRg>10){
-            getToolkit().beep();
-            evt.consume();
-        }
-
+        // TODO add your handling code here:
     }//GEN-LAST:event_txtRgKeyTyped
 
     private void txtDataKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDataKeyTyped
