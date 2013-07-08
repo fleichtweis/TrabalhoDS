@@ -35,8 +35,8 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
         nomeMae = new javax.swing.JLabel();
         cpf = new javax.swing.JLabel();
         rg = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        txtNomePai = new javax.swing.JTextField();
+        txtNomeMae = new javax.swing.JTextField();
         txtCpf = new javax.swing.JTextField();
         txtRg = new javax.swing.JTextField();
         DtNascimento = new javax.swing.JLabel();
@@ -77,9 +77,9 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
         rg.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         rg.setText("RG: ");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtNomePai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtNomePaiActionPerformed(evt);
             }
         });
 
@@ -134,7 +134,7 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
                         .addGroup(CadastroAlunoLayout.createSequentialGroup()
                             .addComponent(nomePai)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE))
+                            .addComponent(txtNomePai, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroAlunoLayout.createSequentialGroup()
                             .addComponent(Nome)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -162,7 +162,7 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroAlunoLayout.createSequentialGroup()
                         .addComponent(nomeMae)
                         .addGap(1, 1, 1)
-                        .addComponent(jTextField2)
+                        .addComponent(txtNomeMae)
                         .addContainerGap())))
             .addGroup(CadastroAlunoLayout.createSequentialGroup()
                 .addGap(189, 189, 189)
@@ -181,9 +181,9 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(CadastroAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(nomePai)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNomePai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(nomeMae)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtNomeMae, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(CadastroAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -216,9 +216,9 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtNomePaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomePaiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtNomePaiActionPerformed
 
     private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
         // TODO add your handling code here:
@@ -293,14 +293,14 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
     private javax.swing.JLabel cpf;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel nomeMae;
     private javax.swing.JLabel nomePai;
     private javax.swing.JLabel rg;
     private javax.swing.JTextField txtCpf;
     private com.toedter.calendar.JDateChooser txtData;
     private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtNomeMae;
+    private javax.swing.JTextField txtNomePai;
     private javax.swing.JTextField txtRg;
     private javax.swing.JLabel txtSexo;
     // End of variables declaration//GEN-END:variables
