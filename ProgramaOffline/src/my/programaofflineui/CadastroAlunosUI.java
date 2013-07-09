@@ -97,6 +97,11 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
         cmbSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ","Masculino","Feminino" }));
 
         bttCadastrar.setText("Cadastrar");
+        bttCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bttCadastrarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -208,6 +213,10 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
     private void txtNomeMaeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeMaeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeMaeActionPerformed
+
+    private void bttCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttCadastrarMouseClicked
+        
+    }//GEN-LAST:event_bttCadastrarMouseClicked
 
     /**
      * @param args the command line arguments
