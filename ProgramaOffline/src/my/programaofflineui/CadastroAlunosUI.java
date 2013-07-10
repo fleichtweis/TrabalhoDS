@@ -6,6 +6,7 @@ package my.programaofflineui;
 
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
+import com.thoughtworks.xstream.XStream;
 
 /**
  *
@@ -20,6 +21,15 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
         initComponents();
     }
 
+    public class Aluno {
+	private String nome;
+	private String nomePai;
+	private String nomeMae;
+	private String rg;
+	private String cpf;
+	private String dtNascimento;
+	private String sexo;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
