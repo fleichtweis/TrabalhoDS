@@ -4,6 +4,8 @@
  */
 package my.programaofflineui;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Mohammad
@@ -27,26 +29,47 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        bttCadastro = new javax.swing.JButton();
+        bttCadastroAluno = new javax.swing.JButton();
+        bttCadastroTurma = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastros", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 12))); // NOI18N
 
-        bttCadastro.setText("Cadastrar Aluno");
-        bttCadastro.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttCadastroAluno.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        bttCadastroAluno.setText("Cadastrar Aluno  ");
+        bttCadastroAluno.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bttCadastroMouseClicked(evt);
+                bttCadastroAlunoMouseClicked(evt);
             }
         });
-        bttCadastro.addActionListener(new java.awt.event.ActionListener() {
+        bttCadastroAluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bttCadastroActionPerformed(evt);
+                bttCadastroAlunoActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Cadastrar Turma");
+        bttCadastroTurma.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        bttCadastroTurma.setText("Cadastrar Turma");
+        bttCadastroTurma.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bttCadastroTurmaMouseClicked(evt);
+            }
+        });
+        bttCadastroTurma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bttCadastroTurmaActionPerformed(evt);
+            }
+        });
+
+        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jButton1.setText("Cadastro de Teste");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -54,19 +77,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bttCadastro)
-                    .addComponent(jButton1))
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bttCadastroAluno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bttCadastroTurma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(bttCadastro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bttCadastroAluno)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bttCadastroTurma)
+                .addGap(26, 26, 26))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -75,29 +101,51 @@ public class TelaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 157, Short.MAX_VALUE))
+                .addGap(0, 132, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bttCadastroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttCadastroMouseClicked
-        if(evt.getSource() == bttCadastro){
-            CadastroAlunosUI fa = new CadastroAlunosUI();
-            fa.setVisible(true);
+    private void bttCadastroAlunoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttCadastroAlunoMouseClicked
+        if(evt.getSource() == bttCadastroAluno){
+            CadastroAlunosUI aluno = new CadastroAlunosUI();
+            aluno.setVisible(true);
+            aluno.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
         }
-    }//GEN-LAST:event_bttCadastroMouseClicked
+    }//GEN-LAST:event_bttCadastroAlunoMouseClicked
 
-    private void bttCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttCadastroActionPerformed
+    private void bttCadastroAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttCadastroAlunoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bttCadastroActionPerformed
+    }//GEN-LAST:event_bttCadastroAlunoActionPerformed
+
+    private void bttCadastroTurmaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttCadastroTurmaMouseClicked
+        if(evt.getSource() == bttCadastroTurma){
+            CadastroTurma turma = new CadastroTurma();
+            turma.setVisible(true);
+            turma.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
+        }
+    }//GEN-LAST:event_bttCadastroTurmaMouseClicked
+
+    private void bttCadastroTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttCadastroTurmaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bttCadastroTurmaActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        if(evt.getSource() == jButton1){
+            CadastroTestes teste = new CadastroTestes();
+            teste.setVisible(true);
+            teste.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
+            
+        }
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -134,7 +182,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bttCadastro;
+    private javax.swing.JButton bttCadastroAluno;
+    private javax.swing.JButton bttCadastroTurma;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
