@@ -28,7 +28,7 @@
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Component id="jPanel3" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="m_9_s" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -41,18 +41,18 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="m_9_s" alignment="0" max="32767" attributes="0"/>
                   <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="22" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="m_9_s">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -67,55 +67,55 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="imc" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="abdominal" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="sentar_e_alcancar" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="sentar_e_alcancar_sb" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="nove_min_s" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="seis_min_s" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="teste_s" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextField1" linkSize="3" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="jTextField2" linkSize="3" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="jTextField3" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField4" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField5" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField6" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtAbdominal" linkSize="3" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="txtIMC" linkSize="3" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="txtSentar_e_alcancar" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtSentar_e_alcancar_sb" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtNove_min_s" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtSeis_min_s" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="qtde" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="m_6_s" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cm_seasb" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cm_sea" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="kgm2" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextField7" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField8" linkSize="1" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                              <Component id="jTextField9" linkSize="1" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                              <Component id="jTextField10" linkSize="1" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                              <Component id="jTextField11" linkSize="1" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                              <Component id="jTextField12" linkSize="1" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                              <Component id="classAbdominal" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="classIMC" linkSize="1" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                              <Component id="classSentar_e_alcancar" linkSize="1" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                              <Component id="classSentar_e_alcancar_sb" linkSize="1" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                              <Component id="classNove_min_s" linkSize="1" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                              <Component id="classSeis_min_s" linkSize="1" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="35" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" max="32767" attributes="0"/>
+                          <Component id="avaliacao_s" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel3" max="32767" attributes="0"/>
+                          <Component id="classificacao_s" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -127,73 +127,73 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="avaliacao_s" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="classificacao_s" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="teste_s" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField1" linkSize="4" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                              <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtAbdominal" linkSize="4" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="qtde" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="abdominal" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField2" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtIMC" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="kgm2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="imc" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField3" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtSentar_e_alcancar" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cm_sea" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="sentar_e_alcancar" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField4" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtSentar_e_alcancar_sb" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cm_seasb" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="sentar_e_alcancar_sb" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField5" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtNove_min_s" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="nove_min_s" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="2" attributes="0">
-                              <Component id="jLabel9" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField6" linkSize="4" alignment="2" min="-2" max="-2" attributes="0"/>
+                              <Component id="seis_min_s" alignment="2" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtSeis_min_s" linkSize="4" alignment="2" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jTextField7" linkSize="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="classAbdominal" linkSize="2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jTextField8" linkSize="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="classIMC" linkSize="2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField9" linkSize="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="classSentar_e_alcancar" linkSize="2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField10" linkSize="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="classSentar_e_alcancar_sb" linkSize="2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField11" linkSize="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="classNove_min_s" linkSize="2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField12" linkSize="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="classSeis_min_s" linkSize="2" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                          <Component id="m_6_s" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="28" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="teste_s">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="11" style="1"/>
@@ -201,7 +201,7 @@
             <Property name="text" type="java.lang.String" value="Teste"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="avaliacao_s">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="11" style="1"/>
@@ -209,7 +209,7 @@
             <Property name="text" type="java.lang.String" value="Avalia&#xe7;&#xe3;o"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
+        <Component class="javax.swing.JLabel" name="classificacao_s">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="11" style="1"/>
@@ -217,94 +217,94 @@
             <Property name="text" type="java.lang.String" value="Classifica&#xe7;&#xe3;o"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="abdominal">
           <Properties>
             <Property name="text" type="java.lang.String" value="Abdominal"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel5">
+        <Component class="javax.swing.JLabel" name="imc">
           <Properties>
             <Property name="text" type="java.lang.String" value="IMC"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel6">
+        <Component class="javax.swing.JLabel" name="sentar_e_alcancar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Sentar-e-Alcan&#xe7;ar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel7">
+        <Component class="javax.swing.JLabel" name="sentar_e_alcancar_sb">
           <Properties>
             <Property name="text" type="java.lang.String" value="Sentar-e-Alcan&#xe7;ar(sem banco)"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel8">
+        <Component class="javax.swing.JLabel" name="nove_min_s">
           <Properties>
             <Property name="text" type="java.lang.String" value="9 minutos"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel9">
+        <Component class="javax.swing.JLabel" name="seis_min_s">
           <Properties>
             <Property name="text" type="java.lang.String" value="6 minutos"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="txtAbdominal">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="txtIMC">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField3">
+        <Component class="javax.swing.JTextField" name="txtSentar_e_alcancar">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField4">
+        <Component class="javax.swing.JTextField" name="txtSentar_e_alcancar_sb">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField5">
+        <Component class="javax.swing.JTextField" name="txtNove_min_s">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField6">
+        <Component class="javax.swing.JTextField" name="txtSeis_min_s">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField7">
+        <Component class="javax.swing.JTextField" name="classAbdominal">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField8">
+        <Component class="javax.swing.JTextField" name="classIMC">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField9">
+        <Component class="javax.swing.JTextField" name="classSentar_e_alcancar">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField10">
+        <Component class="javax.swing.JTextField" name="classSentar_e_alcancar_sb">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField11">
+        <Component class="javax.swing.JTextField" name="classNove_min_s">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField12">
+        <Component class="javax.swing.JTextField" name="classSeis_min_s">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel10">
+        <Component class="javax.swing.JLabel" name="qtde">
           <Properties>
             <Property name="text" type="java.lang.String" value="qtde"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel11">
+        <Component class="javax.swing.JLabel" name="kgm2">
           <Properties>
             <Property name="text" type="java.lang.String" value="kg/m&#xb2;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel12">
+        <Component class="javax.swing.JLabel" name="cm_sea">
           <Properties>
             <Property name="text" type="java.lang.String" value="cm"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel13">
+        <Component class="javax.swing.JLabel" name="cm_seasb">
           <Properties>
             <Property name="text" type="java.lang.String" value="cm"/>
           </Properties>
@@ -314,7 +314,7 @@
             <Property name="text" type="java.lang.String" value="m"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel15">
+        <Component class="javax.swing.JLabel" name="m_6_s">
           <Properties>
             <Property name="text" type="java.lang.String" value="m"/>
           </Properties>
@@ -337,47 +337,47 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                          <Component id="teste_dm" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
-                          <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                          <Component id="avaliacao_dm" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                          <Component id="classificacao_dm" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel21" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel22" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="arremesso_medicine_ball" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="corrida_20m" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="quadrado" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="salto_dist" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="nove_min_dm" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="seis_min_dm" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jTextField13" alignment="0" pref="30" max="32767" attributes="0"/>
-                              <Component id="jTextField14" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextField15" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextField16" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextField17" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextField18" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtArremesso_medicine_ball" alignment="0" pref="30" max="32767" attributes="0"/>
+                              <Component id="txtCorrida_20m" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtQuadrado" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtSalto_dist" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtNove_min_dm" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtSeis_min_dm" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel30" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel28" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel27" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel26" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel25" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cm_amb" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="s_20m" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="s_qua" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cm_sd" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="m_9_dm" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="m_6_dm" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jTextField20" alignment="0" pref="77" max="32767" attributes="0"/>
-                              <Component id="jTextField21" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextField22" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextField23" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextField24" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextField19" max="32767" attributes="0"/>
+                              <Component id="classCorrida_20m" alignment="0" pref="77" max="32767" attributes="0"/>
+                              <Component id="classQuadrado" alignment="0" max="32767" attributes="0"/>
+                              <Component id="classtSalto_dist" alignment="0" max="32767" attributes="0"/>
+                              <Component id="classNove_min_dm" alignment="0" max="32767" attributes="0"/>
+                              <Component id="classSeis_min_dm" alignment="0" max="32767" attributes="0"/>
+                              <Component id="classArremesso_medicine_ball" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -389,78 +389,58 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="2" attributes="0">
-                      <Component id="jLabel16" alignment="2" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel17" alignment="2" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel18" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="teste_dm" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="avaliacao_dm" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="classificacao_dm" alignment="2" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="2" attributes="0">
-                              <Component id="jLabel19" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField13" alignment="2" min="-2" pref="20" max="-2" attributes="0"/>
-                              <Component id="jLabel30" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField19" alignment="2" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="2" attributes="0">
-                              <Component id="jLabel20" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField14" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField20" alignment="2" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="2" attributes="0">
-                              <Component id="jLabel21" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField15" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField21" alignment="2" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="2" attributes="0">
-                              <Component id="jLabel22" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField16" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField22" alignment="2" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="2" attributes="0">
-                              <Component id="jLabel23" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField17" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField23" alignment="2" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="2" attributes="0">
-                              <Component id="jLabel24" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField18" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField24" alignment="2" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
-                          <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
-                          <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                          <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-                          <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="cm_amb" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtArremesso_medicine_ball" alignment="2" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="arremesso_medicine_ball" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="classArremesso_medicine_ball" alignment="2" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="30" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="corrida_20m" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtCorrida_20m" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="s_20m" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="classCorrida_20m" alignment="2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="quadrado" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtQuadrado" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="s_qua" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="classQuadrado" alignment="2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="salto_dist" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtSalto_dist" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="cm_sd" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="classtSalto_dist" alignment="2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="nove_min_dm" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNove_min_dm" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="m_9_dm" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="classNove_min_dm" alignment="2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="seis_min_dm" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtSeis_min_dm" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="m_6_dm" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="classSeis_min_dm" alignment="2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel16">
+        <Component class="javax.swing.JLabel" name="teste_dm">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="11" style="1"/>
@@ -468,7 +448,7 @@
             <Property name="text" type="java.lang.String" value="Teste"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel17">
+        <Component class="javax.swing.JLabel" name="avaliacao_dm">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="11" style="1"/>
@@ -476,7 +456,7 @@
             <Property name="text" type="java.lang.String" value="Avalia&#xe7;&#xe3;o"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel18">
+        <Component class="javax.swing.JLabel" name="classificacao_dm">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="11" style="1"/>
@@ -484,104 +464,104 @@
             <Property name="text" type="java.lang.String" value="Classifica&#xe7;&#xe3;o"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel19">
+        <Component class="javax.swing.JLabel" name="arremesso_medicine_ball">
           <Properties>
             <Property name="text" type="java.lang.String" value="Arremesso de Medicine Ball"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel20">
+        <Component class="javax.swing.JLabel" name="corrida_20m">
           <Properties>
             <Property name="text" type="java.lang.String" value="Corrida de 20 metros"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel21">
+        <Component class="javax.swing.JLabel" name="quadrado">
           <Properties>
             <Property name="text" type="java.lang.String" value="Quadrado"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel22">
+        <Component class="javax.swing.JLabel" name="salto_dist">
           <Properties>
             <Property name="text" type="java.lang.String" value="Salto em Dist&#xe2;ncia"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel23">
+        <Component class="javax.swing.JLabel" name="nove_min_dm">
           <Properties>
             <Property name="text" type="java.lang.String" value="9 minutos"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel24">
+        <Component class="javax.swing.JLabel" name="seis_min_dm">
           <Properties>
             <Property name="text" type="java.lang.String" value="6 minutos"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField13">
+        <Component class="javax.swing.JTextField" name="txtArremesso_medicine_ball">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField14">
+        <Component class="javax.swing.JTextField" name="txtCorrida_20m">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField15">
+        <Component class="javax.swing.JTextField" name="txtQuadrado">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField16">
+        <Component class="javax.swing.JTextField" name="txtSalto_dist">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField17">
+        <Component class="javax.swing.JTextField" name="txtNove_min_dm">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField18">
+        <Component class="javax.swing.JTextField" name="txtSeis_min_dm">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel25">
+        <Component class="javax.swing.JLabel" name="m_6_dm">
           <Properties>
             <Property name="text" type="java.lang.String" value="m"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel26">
+        <Component class="javax.swing.JLabel" name="m_9_dm">
           <Properties>
             <Property name="text" type="java.lang.String" value="m"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel27">
+        <Component class="javax.swing.JLabel" name="cm_sd">
           <Properties>
             <Property name="text" type="java.lang.String" value="cm"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel28">
+        <Component class="javax.swing.JLabel" name="s_qua">
           <Properties>
             <Property name="text" type="java.lang.String" value="s"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel29">
+        <Component class="javax.swing.JLabel" name="s_20m">
           <Properties>
             <Property name="text" type="java.lang.String" value="s"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel30">
+        <Component class="javax.swing.JLabel" name="cm_amb">
           <Properties>
             <Property name="text" type="java.lang.String" value="cm"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField19">
+        <Component class="javax.swing.JTextField" name="classArremesso_medicine_ball">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField20">
+        <Component class="javax.swing.JTextField" name="classCorrida_20m">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField21">
+        <Component class="javax.swing.JTextField" name="classQuadrado">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField22">
+        <Component class="javax.swing.JTextField" name="classtSalto_dist">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField23">
+        <Component class="javax.swing.JTextField" name="classNove_min_dm">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField24">
+        <Component class="javax.swing.JTextField" name="classSeis_min_dm">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
