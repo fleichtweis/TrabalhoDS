@@ -19,7 +19,33 @@ public class CadastroTestes extends javax.swing.JFrame {
     public CadastroTestes() {
         initComponents();
     }
+    public static class TestesSaude{
+        private String abdominal;
+	private String imc;
+	private String sentar_e_alcancar;
+	private String sentar_e_alcancar_sb;
+	private String nove_min_s;
+	private String seis_min_s;
+        public void setAbdominal(String abdominal){
+            this.abdominal=abdominal;
+        }
+        //...
+        
+    }
 
+
+    public static class TestesMotor{
+	private String arremeso_medicine_ball;
+	private String corrida_20_m;
+	private String quadrado;
+	private String salto_dist;
+	private String nove_min_dm;
+	private String seis_min_dm;
+        public void setArremessoMedicineBall(String arremeso_medicine_ball){
+            this.arremeso_medicine_ball=arremeso_medicine_ball;
+        }
+        //...
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

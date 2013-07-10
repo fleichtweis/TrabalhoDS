@@ -272,7 +272,7 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
             String contatosEmXML = xstream.toXML(contatos);
             System.out.println("\nContatos em XML:");  
             System.out.println(contatosEmXML);  
-                       
+            
             JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!");
         }
     }//GEN-LAST:event_bttCadastrarMouseClicked
