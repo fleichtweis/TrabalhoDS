@@ -102,6 +102,11 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
                 bttCadastrarMouseClicked(evt);
             }
         });
+        bttCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bttCadastrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -217,6 +222,10 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
     private void bttCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttCadastrarMouseClicked
         
     }//GEN-LAST:event_bttCadastrarMouseClicked
+
+    private void bttCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttCadastrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bttCadastrarActionPerformed
 
     /**
      * @param args the command line arguments
