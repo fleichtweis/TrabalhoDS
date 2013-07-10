@@ -4,6 +4,8 @@
  */
 package my.programaofflineui;
 
+import java.awt.event.KeyEvent;
+
 /**
  *
  * @author Mohammad
@@ -108,6 +110,12 @@ public class CadastroTestes extends javax.swing.JFrame {
         nove_min_s.setText("9 minutos");
 
         seis_min_s.setText("6 minutos");
+
+        txtAbdominal.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtAbdominalKeyPressed(evt);
+            }
+        });
 
         classAbdominal.setEditable(false);
 
@@ -429,6 +437,14 @@ public class CadastroTestes extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtAbdominalKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAbdominalKeyPressed
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit( c ) || c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE){
+            getToolkit().beep();
+            //evt.consume();
+        }
+    }//GEN-LAST:event_txtAbdominalKeyPressed
 
     /**
      * @param args the command line arguments
