@@ -26,116 +26,405 @@ public class CadastroTestes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        m_9_s = new javax.swing.JPanel();
+        teste_s = new javax.swing.JLabel();
+        avaliacao_s = new javax.swing.JLabel();
+        classificacao_s = new javax.swing.JLabel();
+        abdominal = new javax.swing.JLabel();
+        imc = new javax.swing.JLabel();
+        sentar_e_alcancar = new javax.swing.JLabel();
+        sentar_e_alcancar_sb = new javax.swing.JLabel();
+        nove_min_s = new javax.swing.JLabel();
+        seis_min_s = new javax.swing.JLabel();
+        txtAbdominal = new javax.swing.JTextField();
+        txtIMC = new javax.swing.JTextField();
+        txtSentar_e_alcancar = new javax.swing.JTextField();
+        txtSentar_e_alcancar_sb = new javax.swing.JTextField();
+        txtNove_min_s = new javax.swing.JTextField();
+        txtSeis_min_s = new javax.swing.JTextField();
+        classAbdominal = new javax.swing.JTextField();
+        classIMC = new javax.swing.JTextField();
+        classSentar_e_alcancar = new javax.swing.JTextField();
+        classSentar_e_alcancar_sb = new javax.swing.JTextField();
+        classNove_min_s = new javax.swing.JTextField();
+        classSeis_min_s = new javax.swing.JTextField();
+        qtde = new javax.swing.JLabel();
+        kgm2 = new javax.swing.JLabel();
+        cm_sea = new javax.swing.JLabel();
+        cm_seasb = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        m_6_s = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        teste_dm = new javax.swing.JLabel();
+        avaliacao_dm = new javax.swing.JLabel();
+        classificacao_dm = new javax.swing.JLabel();
+        arremesso_medicine_ball = new javax.swing.JLabel();
+        corrida_20m = new javax.swing.JLabel();
+        quadrado = new javax.swing.JLabel();
+        salto_dist = new javax.swing.JLabel();
+        nove_min_dm = new javax.swing.JLabel();
+        seis_min_dm = new javax.swing.JLabel();
+        txtArremesso_medicine_ball = new javax.swing.JTextField();
+        txtCorrida_20m = new javax.swing.JTextField();
+        txtQuadrado = new javax.swing.JTextField();
+        txtSalto_dist = new javax.swing.JTextField();
+        txtNove_min_dm = new javax.swing.JTextField();
+        txtSeis_min_dm = new javax.swing.JTextField();
+        m_6_dm = new javax.swing.JLabel();
+        m_9_dm = new javax.swing.JLabel();
+        cm_sd = new javax.swing.JLabel();
+        s_qua = new javax.swing.JLabel();
+        s_20m = new javax.swing.JLabel();
+        cm_amb = new javax.swing.JLabel();
+        classArremesso_medicine_ball = new javax.swing.JTextField();
+        classCorrida_20m = new javax.swing.JTextField();
+        classQuadrado = new javax.swing.JTextField();
+        classtSalto_dist = new javax.swing.JTextField();
+        classNove_min_dm = new javax.swing.JTextField();
+        classSeis_min_dm = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Avaliação Física relaciona à Saúde"));
+        m_9_s.setBorder(javax.swing.BorderFactory.createTitledBorder("Avaliação Física relaciona à Saúde"));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel1.setText("Teste");
+        teste_s.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        teste_s.setText("Teste");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel2.setText("Avalialção");
+        avaliacao_s.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        avaliacao_s.setText("Avaliação");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel3.setText("Classificação");
+        classificacao_s.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        classificacao_s.setText("Classificação");
 
-        jLabel4.setText("Abdominal");
+        abdominal.setText("Abdominal");
 
-        jLabel5.setText("IMC");
+        imc.setText("IMC");
 
-        jLabel6.setText("Sentar-e-Alcançar");
+        sentar_e_alcancar.setText("Sentar-e-Alcançar");
 
-        jLabel7.setText("Sentar-e-Alcançar(sem banco)");
+        sentar_e_alcancar_sb.setText("Sentar-e-Alcançar(sem banco)");
 
-        jLabel8.setText("9 minutos");
+        nove_min_s.setText("9 minutos");
 
-        jLabel9.setText("6 minutos");
+        seis_min_s.setText("6 minutos");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        classAbdominal.setEditable(false);
+
+        classIMC.setEditable(false);
+
+        classSentar_e_alcancar.setEditable(false);
+
+        classSentar_e_alcancar_sb.setEditable(false);
+
+        classNove_min_s.setEditable(false);
+
+        classSeis_min_s.setEditable(false);
+
+        qtde.setText("qtde");
+
+        kgm2.setText("kg/m²");
+
+        cm_sea.setText("cm");
+
+        cm_seasb.setText("cm");
+
+        jLabel14.setText("m");
+
+        m_6_s.setText("m");
+
+        javax.swing.GroupLayout m_9_sLayout = new javax.swing.GroupLayout(m_9_s);
+        m_9_s.setLayout(m_9_sLayout);
+        m_9_sLayout.setHorizontalGroup(
+            m_9_sLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(m_9_sLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                .addGroup(m_9_sLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imc)
+                    .addComponent(abdominal)
+                    .addComponent(sentar_e_alcancar)
+                    .addComponent(sentar_e_alcancar_sb)
+                    .addComponent(nove_min_s)
+                    .addComponent(seis_min_s)
+                    .addComponent(teste_s))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(m_9_sLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(m_9_sLayout.createSequentialGroup()
+                        .addGroup(m_9_sLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtAbdominal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtIMC, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSentar_e_alcancar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSentar_e_alcancar_sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNove_min_s, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSeis_min_s, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(m_9_sLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(qtde)
+                            .addGroup(m_9_sLayout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addGroup(m_9_sLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel14)
+                                    .addComponent(m_6_s)
+                                    .addComponent(cm_seasb)
+                                    .addComponent(cm_sea)))
+                            .addComponent(kgm2))
+                        .addGap(18, 18, 18)
+                        .addGroup(m_9_sLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(classAbdominal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(classIMC, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(classSentar_e_alcancar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(classSentar_e_alcancar_sb, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(classNove_min_s, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(classSeis_min_s, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(m_9_sLayout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(avaliacao_s, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(classificacao_s, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(23, 23, 23))))
         );
+
+        m_9_sLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {classAbdominal, classIMC, classNove_min_s, classSeis_min_s, classSentar_e_alcancar, classSentar_e_alcancar_sb});
+
+        m_9_sLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtAbdominal, txtIMC, txtNove_min_s, txtSeis_min_s, txtSentar_e_alcancar, txtSentar_e_alcancar_sb});
+
+        m_9_sLayout.setVerticalGroup(
+            m_9_sLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(m_9_sLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(m_9_sLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(avaliacao_s)
+                    .addComponent(classificacao_s)
+                    .addComponent(teste_s))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(m_9_sLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(m_9_sLayout.createSequentialGroup()
+                        .addGroup(m_9_sLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtAbdominal, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(qtde)
+                            .addComponent(abdominal))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(m_9_sLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtIMC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(kgm2)
+                            .addComponent(imc))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(m_9_sLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtSentar_e_alcancar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cm_sea)
+                            .addComponent(sentar_e_alcancar))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(m_9_sLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtSentar_e_alcancar_sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cm_seasb)
+                            .addComponent(sentar_e_alcancar_sb))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(m_9_sLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtNove_min_s, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14)
+                            .addComponent(nove_min_s))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(m_9_sLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(seis_min_s)
+                            .addComponent(txtSeis_min_s, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(m_9_sLayout.createSequentialGroup()
+                        .addComponent(classAbdominal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(classIMC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(classSentar_e_alcancar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(classSentar_e_alcancar_sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(classNove_min_s, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(classSeis_min_s, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(m_9_sLayout.createSequentialGroup()
+                        .addComponent(m_6_s)
+                        .addGap(3, 3, 3)))
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+
+        m_9_sLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {classAbdominal, classIMC, classNove_min_s, classSeis_min_s, classSentar_e_alcancar, classSentar_e_alcancar_sb});
+
+        m_9_sLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtAbdominal, txtIMC, txtNove_min_s, txtSeis_min_s, txtSentar_e_alcancar, txtSentar_e_alcancar_sb});
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Avaliação Física relacionada ao Desempenho Motor "));
+
+        teste_dm.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        teste_dm.setText("Teste");
+
+        avaliacao_dm.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        avaliacao_dm.setText("Avaliação");
+
+        classificacao_dm.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        classificacao_dm.setText("Classificação");
+
+        arremesso_medicine_ball.setText("Arremesso de Medicine Ball");
+
+        corrida_20m.setText("Corrida de 20 metros");
+
+        quadrado.setText("Quadrado");
+
+        salto_dist.setText("Salto em Distância");
+
+        nove_min_dm.setText("9 minutos");
+
+        seis_min_dm.setText("6 minutos");
+
+        m_6_dm.setText("m");
+
+        m_9_dm.setText("m");
+
+        cm_sd.setText("cm");
+
+        s_qua.setText("s");
+
+        s_20m.setText("s");
+
+        cm_amb.setText("cm");
+
+        classArremesso_medicine_ball.setEditable(false);
+
+        classCorrida_20m.setEditable(false);
+
+        classQuadrado.setEditable(false);
+
+        classtSalto_dist.setEditable(false);
+
+        classNove_min_dm.setEditable(false);
+
+        classSeis_min_dm.setEditable(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(teste_dm)
+                        .addGap(114, 114, 114)
+                        .addComponent(avaliacao_dm)
+                        .addGap(29, 29, 29)
+                        .addComponent(classificacao_dm))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(arremesso_medicine_ball)
+                            .addComponent(corrida_20m)
+                            .addComponent(quadrado)
+                            .addComponent(salto_dist)
+                            .addComponent(nove_min_dm)
+                            .addComponent(seis_min_dm))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtArremesso_medicine_ball, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                            .addComponent(txtCorrida_20m)
+                            .addComponent(txtQuadrado)
+                            .addComponent(txtSalto_dist)
+                            .addComponent(txtNove_min_dm)
+                            .addComponent(txtSeis_min_dm))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cm_amb)
+                            .addComponent(s_20m)
+                            .addComponent(s_qua)
+                            .addComponent(cm_sd)
+                            .addComponent(m_9_dm)
+                            .addComponent(m_6_dm))
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(classCorrida_20m, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                            .addComponent(classQuadrado)
+                            .addComponent(classtSalto_dist)
+                            .addComponent(classNove_min_dm)
+                            .addComponent(classSeis_min_dm)
+                            .addComponent(classArremesso_medicine_ball)))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(teste_dm)
+                    .addComponent(avaliacao_dm)
+                    .addComponent(classificacao_dm))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(cm_amb)
+                    .addComponent(txtArremesso_medicine_ball, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(arremesso_medicine_ball)
+                    .addComponent(classArremesso_medicine_ball, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(corrida_20m)
+                    .addComponent(txtCorrida_20m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(s_20m)
+                    .addComponent(classCorrida_20m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(quadrado)
+                    .addComponent(txtQuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(s_qua)
+                    .addComponent(classQuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(salto_dist)
+                    .addComponent(txtSalto_dist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cm_sd)
+                    .addComponent(classtSalto_dist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(nove_min_dm)
+                    .addComponent(txtNove_min_dm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(m_9_dm)
+                    .addComponent(classNove_min_dm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(seis_min_dm)
+                    .addComponent(txtSeis_min_dm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(m_6_dm)
+                    .addComponent(classSeis_min_dm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 38, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(m_9_s, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(m_9_s, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -176,16 +465,62 @@ public class CadastroTestes extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel abdominal;
+    private javax.swing.JLabel arremesso_medicine_ball;
+    private javax.swing.JLabel avaliacao_dm;
+    private javax.swing.JLabel avaliacao_s;
+    private javax.swing.JTextField classAbdominal;
+    private javax.swing.JTextField classArremesso_medicine_ball;
+    private javax.swing.JTextField classCorrida_20m;
+    private javax.swing.JTextField classIMC;
+    private javax.swing.JTextField classNove_min_dm;
+    private javax.swing.JTextField classNove_min_s;
+    private javax.swing.JTextField classQuadrado;
+    private javax.swing.JTextField classSeis_min_dm;
+    private javax.swing.JTextField classSeis_min_s;
+    private javax.swing.JTextField classSentar_e_alcancar;
+    private javax.swing.JTextField classSentar_e_alcancar_sb;
+    private javax.swing.JLabel classificacao_dm;
+    private javax.swing.JLabel classificacao_s;
+    private javax.swing.JTextField classtSalto_dist;
+    private javax.swing.JLabel cm_amb;
+    private javax.swing.JLabel cm_sd;
+    private javax.swing.JLabel cm_sea;
+    private javax.swing.JLabel cm_seasb;
+    private javax.swing.JLabel corrida_20m;
+    private javax.swing.JLabel imc;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel kgm2;
+    private javax.swing.JLabel m_6_dm;
+    private javax.swing.JLabel m_6_s;
+    private javax.swing.JLabel m_9_dm;
+    private javax.swing.JPanel m_9_s;
+    private javax.swing.JLabel nove_min_dm;
+    private javax.swing.JLabel nove_min_s;
+    private javax.swing.JLabel qtde;
+    private javax.swing.JLabel quadrado;
+    private javax.swing.JLabel s_20m;
+    private javax.swing.JLabel s_qua;
+    private javax.swing.JLabel salto_dist;
+    private javax.swing.JLabel seis_min_dm;
+    private javax.swing.JLabel seis_min_s;
+    private javax.swing.JLabel sentar_e_alcancar;
+    private javax.swing.JLabel sentar_e_alcancar_sb;
+    private javax.swing.JLabel teste_dm;
+    private javax.swing.JLabel teste_s;
+    private javax.swing.JTextField txtAbdominal;
+    private javax.swing.JTextField txtArremesso_medicine_ball;
+    private javax.swing.JTextField txtCorrida_20m;
+    private javax.swing.JTextField txtIMC;
+    private javax.swing.JTextField txtNove_min_dm;
+    private javax.swing.JTextField txtNove_min_s;
+    private javax.swing.JTextField txtQuadrado;
+    private javax.swing.JTextField txtSalto_dist;
+    private javax.swing.JTextField txtSeis_min_dm;
+    private javax.swing.JTextField txtSeis_min_s;
+    private javax.swing.JTextField txtSentar_e_alcancar;
+    private javax.swing.JTextField txtSentar_e_alcancar_sb;
     // End of variables declaration//GEN-END:variables
 }
