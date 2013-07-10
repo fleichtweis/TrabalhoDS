@@ -115,6 +115,39 @@ public class CadastroTestes extends javax.swing.JFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtAbdominalKeyPressed(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAbdominalKeyTyped(evt);
+            }
+        });
+
+        txtIMC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIMCKeyTyped(evt);
+            }
+        });
+
+        txtSentar_e_alcancar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSentar_e_alcancarKeyTyped(evt);
+            }
+        });
+
+        txtSentar_e_alcancar_sb.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSentar_e_alcancar_sbKeyTyped(evt);
+            }
+        });
+
+        txtNove_min_s.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNove_min_sKeyTyped(evt);
+            }
+        });
+
+        txtSeis_min_s.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSeis_min_sKeyTyped(evt);
+            }
         });
 
         classAbdominal.setEditable(false);
@@ -281,6 +314,42 @@ public class CadastroTestes extends javax.swing.JFrame {
 
         seis_min_dm.setText("6 minutos");
 
+        txtArremesso_medicine_ball.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtArremesso_medicine_ballKeyTyped(evt);
+            }
+        });
+
+        txtCorrida_20m.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCorrida_20mKeyTyped(evt);
+            }
+        });
+
+        txtQuadrado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtQuadradoKeyTyped(evt);
+            }
+        });
+
+        txtSalto_dist.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSalto_distKeyTyped(evt);
+            }
+        });
+
+        txtNove_min_dm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNove_min_dmKeyTyped(evt);
+            }
+        });
+
+        txtSeis_min_dm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSeis_min_dmKeyTyped(evt);
+            }
+        });
+
         m_6_dm.setText("m");
 
         m_9_dm.setText("m");
@@ -439,12 +508,104 @@ public class CadastroTestes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtAbdominalKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAbdominalKeyPressed
+        
+    }//GEN-LAST:event_txtAbdominalKeyPressed
+
+    private void txtAbdominalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAbdominalKeyTyped
         char c = evt.getKeyChar();
         if(!(Character.isDigit( c ) || c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE){
             getToolkit().beep();
-            //evt.consume();
+            evt.consume();
         }
-    }//GEN-LAST:event_txtAbdominalKeyPressed
+    }//GEN-LAST:event_txtAbdominalKeyTyped
+
+    private void txtIMCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIMCKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit( c ) || c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE){
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtIMCKeyTyped
+
+    private void txtSentar_e_alcancar_sbKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSentar_e_alcancar_sbKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit( c ) || c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE){
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtSentar_e_alcancar_sbKeyTyped
+
+    private void txtNove_min_sKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNove_min_sKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit( c ) || c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE){
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNove_min_sKeyTyped
+
+    private void txtSeis_min_sKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSeis_min_sKeyTyped
+       char c = evt.getKeyChar();
+        if(!(Character.isDigit( c ) || c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE){
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtSeis_min_sKeyTyped
+
+    private void txtArremesso_medicine_ballKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtArremesso_medicine_ballKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit( c ) || c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE){
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtArremesso_medicine_ballKeyTyped
+
+    private void txtCorrida_20mKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorrida_20mKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit( c ) || c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE){
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCorrida_20mKeyTyped
+
+    private void txtQuadradoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQuadradoKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit( c ) || c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE){
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtQuadradoKeyTyped
+
+    private void txtSalto_distKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSalto_distKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit( c ) || c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE){
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtSalto_distKeyTyped
+
+    private void txtNove_min_dmKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNove_min_dmKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit( c ) || c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE){
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNove_min_dmKeyTyped
+
+    private void txtSeis_min_dmKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSeis_min_dmKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit( c ) || c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE){
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtSeis_min_dmKeyTyped
+
+    private void txtSentar_e_alcancarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSentar_e_alcancarKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit( c ) || c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE){
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtSentar_e_alcancarKeyTyped
 
     /**
      * @param args the command line arguments
