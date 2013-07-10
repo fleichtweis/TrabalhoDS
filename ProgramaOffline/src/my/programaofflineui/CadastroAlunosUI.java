@@ -7,6 +7,9 @@ package my.programaofflineui;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -21,15 +24,34 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
         initComponents();
     }
 
-    public class Aluno {
+    public static class Aluno {
 	private String nome;
+        private String rg;
+        private String cpf;
+        private String sexo;
 	private String nomePai;
-	private String nomeMae;
-	private String rg;
-	private String cpf;
-	private String dtNascimento;
-	private String sexo;
+        private String nomeMae;
+        public void setNome(String nome){
+            this.nome=nome;
+        }
+        public void setRg(String rg){
+            this.rg=rg;
+        }
+        public void setCpf(String cpf){
+            this.cpf=cpf;
+        }
+        public void setNomePai(String nomePai){
+            this.nomePai=nomePai;
+        }
+        public void setNomeMae(String nomeMae){
+            this.nomeMae = nomeMae;
+        }
+        public String getNome(){
+            return this.nome;
+        }
     }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -202,7 +224,7 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -228,10 +250,29 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
 
     private void txtNomeMaeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeMaeActionPerformed
         // TODO add your handling code here:
+            
     }//GEN-LAST:event_txtNomeMaeActionPerformed
 
     private void bttCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttCadastrarMouseClicked
         if(evt.getSource() == bttCadastrar){
+            XStream xstream = new XStream();
+            
+            List contatos = new ArrayList(1);
+            
+            Aluno aluno = new Aluno();
+            
+            aluno.setNome(txtNome.getText());
+            aluno.setRg(txtRg.getText());
+            aluno.setCpf(txtCpf.getText());
+            aluno.setNomePai(txtNomePai.getText());
+            aluno.setNomeMae(txtNomeMae.getText());
+            //aluno.setSexo(cmbSexo.g));
+            
+            contatos.add(aluno);
+            String contatosEmXML = xstream.toXML(contatos);
+            System.out.println("\nContatos em XML:");  
+            System.out.println(contatosEmXML);  
+                       
             JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!");
         }
     }//GEN-LAST:event_bttCadastrarMouseClicked
