@@ -5,6 +5,7 @@
 package my.programaofflineui;
 
 import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -191,7 +192,7 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -220,7 +221,9 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNomeMaeActionPerformed
 
     private void bttCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttCadastrarMouseClicked
-        
+        if(evt.getSource() == bttCadastrar){
+            JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!");
+        }
     }//GEN-LAST:event_bttCadastrarMouseClicked
 
     private void bttCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttCadastrarActionPerformed

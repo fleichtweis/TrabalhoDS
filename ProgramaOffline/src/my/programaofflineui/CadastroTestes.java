@@ -5,6 +5,7 @@
 package my.programaofflineui;
 
 import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -85,6 +86,7 @@ public class CadastroTestes extends javax.swing.JFrame {
         classNove_min_dm = new javax.swing.JTextField();
         classSeis_min_dm = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
+        bttCadastrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -468,15 +470,28 @@ public class CadastroTestes extends javax.swing.JFrame {
 
         jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        bttCadastrar.setText("Cadastrar");
+        bttCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bttCadastrarMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(230, 230, 230)
+                .addComponent(bttCadastrar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 38, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bttCadastrar)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -501,7 +516,7 @@ public class CadastroTestes extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -607,6 +622,12 @@ public class CadastroTestes extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtSentar_e_alcancarKeyTyped
 
+    private void bttCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttCadastrarMouseClicked
+        if(evt.getSource() == bttCadastrar){
+            JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!");
+        }
+    }//GEN-LAST:event_bttCadastrarMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -646,6 +667,7 @@ public class CadastroTestes extends javax.swing.JFrame {
     private javax.swing.JLabel arremesso_medicine_ball;
     private javax.swing.JLabel avaliacao_dm;
     private javax.swing.JLabel avaliacao_s;
+    private javax.swing.JButton bttCadastrar;
     private javax.swing.JTextField classAbdominal;
     private javax.swing.JTextField classArremesso_medicine_ball;
     private javax.swing.JTextField classCorrida_20m;
