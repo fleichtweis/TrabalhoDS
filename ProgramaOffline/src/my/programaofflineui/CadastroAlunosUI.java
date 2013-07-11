@@ -8,6 +8,9 @@ import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +21,7 @@ import java.util.List;
 public class CadastroAlunosUI extends javax.swing.JFrame {
 
     /**
-     * Creates new form CadastroAlunosUI1
+     * Creates new form CadastroAlunosUI
      */
     public CadastroAlunosUI() {
         initComponents();
@@ -26,6 +29,7 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
 
     public static class Aluno {
 	private String nome;
+        private String dtNascimento;
         private String rg;
         private String cpf;
         private String sexo;
@@ -33,6 +37,12 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
         private String nomeMae;
         public void setNome(String nome){
             this.nome=nome;
+        }
+        public void setSexo(Object sexo){
+            this.sexo = sexo.toString();
+        }
+        public void setDtNascimento(String dtNascimento){
+            this.dtNascimento=dtNascimento;
         }
         public void setRg(String rg){
             this.rg=rg;
@@ -74,7 +84,7 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
         txtNomePai = new javax.swing.JTextField();
         txtCpf = new javax.swing.JTextField();
         txtRg = new javax.swing.JTextField();
-        txtDtNascimento1 = new com.toedter.calendar.JDateChooser();
+        txtDtNascimento = new com.toedter.calendar.JDateChooser();
         cmbSexo = new javax.swing.JComboBox();
         bttCadastrar = new javax.swing.JButton();
 
@@ -165,7 +175,7 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(DtNascimento)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtDtNascimento1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(txtDtNascimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,7 +190,7 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cmbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(208, 208, 208)
                         .addComponent(bttCadastrar)))
@@ -194,7 +204,7 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
                         .addComponent(Nome)
                         .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(DtNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtDtNascimento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDtNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NomePai, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -262,17 +272,26 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
             Aluno aluno = new Aluno();
             
             aluno.setNome(txtNome.getText());
+            //aluno.setDtNascimento(txtDtNascimento.);
             aluno.setRg(txtRg.getText());
             aluno.setCpf(txtCpf.getText());
             aluno.setNomePai(txtNomePai.getText());
             aluno.setNomeMae(txtNomeMae.getText());
-            //aluno.setSexo(cmbSexo.g));
+            aluno.setSexo(cmbSexo.getSelectedItem());
             
             contatos.add(aluno);
             String contatosEmXML = xstream.toXML(contatos);
             System.out.println("\nContatos em XML:");  
             System.out.println(contatosEmXML);  
             
+            FileOutputStream gravar;
+            try {
+                gravar = new FileOutputStream("alunos.xml");
+                gravar.write(xstream.toXML(contatos).getBytes());
+                gravar.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
             JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!");
         }
     }//GEN-LAST:event_bttCadastrarMouseClicked
@@ -327,7 +346,7 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
     private javax.swing.JComboBox cmbSexo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtCpf;
-    private com.toedter.calendar.JDateChooser txtDtNascimento1;
+    private com.toedter.calendar.JDateChooser txtDtNascimento;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNomeMae;
     private javax.swing.JTextField txtNomePai;

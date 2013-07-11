@@ -70,7 +70,7 @@
                       <Group type="102" attributes="0">
                           <Component id="DtNascimento" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="txtDtNascimento1" max="32767" attributes="0"/>
+                          <Component id="txtDtNascimento" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -88,14 +88,14 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="Sexo" min="-2" pref="39" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="cmbSexo" min="-2" pref="84" max="-2" attributes="0"/>
+                          <Component id="cmbSexo" min="-2" pref="101" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="208" max="-2" attributes="0"/>
                           <Component id="bttCadastrar" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="132" max="32767" attributes="0"/>
+                  <EmptySpace min="220" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -108,7 +108,7 @@
                           <Component id="txtNome" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="DtNascimento" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="txtDtNascimento1" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDtNascimento" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -216,7 +216,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRgActionPerformed"/>
           </Events>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="txtDtNascimento1">
+        <Component class="com.toedter.calendar.JDateChooser" name="txtDtNascimento">
         </Component>
         <Component class="javax.swing.JComboBox" name="cmbSexo">
           <Properties>
