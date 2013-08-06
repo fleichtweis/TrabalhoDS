@@ -1,0 +1,11 @@
+<legend>Importar Relatório</legend>
+<%= form_for :post do |f| %>
+	<p>
+		<%= f.label :text %><br>
+		 <%= f.file_field :relatorio %>
+  	</p>
+ 
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
