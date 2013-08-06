@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<relatorio>
+	<dataRelatorio>10/07/2013</dataRelatorio>
+<professor>
+	<cpf>527.466.103-37</cpf>
+	<!--instituicao>UFPel</instituicao -->
+		<!--cidadeInstituicao>Pelotas</cidadeInstituicao -->
+		<!--estadoInstituicao>RS</estadoInstituicao -->
+	<turma>
+		<nomeTurma>01</nomeTurma>
+		<aluno>
+			<nomeAluno>João Silva</nomeAluno>
+			<genero>Masculino</genero>
+			<dataNascimento>20/08/1994</dataNascimento>
+			<nomeMae>Eva Andrade</nomeMae>
+			<nomePai>Jorge Silva</nomePai>
+				<avaliacao>
+					<dataAvaliacao>23/06/2013</dataAvaliacao>
+					<!--horario>15:30</horario -->
+					<!--temperatura>23</temperatura -->
+					<!--localAvaliacao>Escola do Centro</localAvaliacao -->
+						<!--cidadeAvaliacao>Pelotas</cidadeAvaliacao -->
+						<!--estadoAvaliacao>RS</estadoAvaliacao -->
+					<envergadura>1,55</envergadura>
+					<estatura>1,53</estatura>
+					<massaCorporal>54</massaCorporal>
+					<abdominal>5</abdominal>
+					<imc>23,4</imc>
+					<sentar_e_alcancar>25</sentar_e_alcancar>
+					<sentar_e_alcancar_sb>19</sentar_e_alcancar_sb>
+					<nove_min>1500</nove_min>
+					<seis_min>0</seis_min>
+					<arremesso_medicine_ball>5,00</arremesso_medicine_ball>
+					<quadrado>4,7</quadrado>
+					<salto_distancia>2,40</salto_distancia>
+					<nove_min_dm>1500</nove_min_dm>
+					<seis_min_dm>0</seis_min_dm>
+					<corrida20m>4</corrida20m>
+				</avaliacao>
+		</aluno>
+		<aluno>
+			<nomeAluno>Maria Costa</nomeAluno>
+			<genero>Feminino</genero>
+			<dataNascimento>30/03/2004</dataNascimento>
+			<nomeMae>Tânia Santos</nomeMae>
+			<nomePai>Edu Costa</nomePai>
+				<avaliacao>
+					<dataAvaliacao>23/06/2013</dataAvaliacao>
+					<!--horario>10:20</horario -->
+					<!--temperatura>21</temperatura -->
+					<!--localAvaliacao>Escola do Bairro</localAvaliacao -->
+						<!--cidadeAvaliacao>Pelotas</cidadeAvaliacao -->
+						<!--estadoAvaliacao>RS</estadoAvaliacao -->
+					<envergadura>1,44</envergadura>
+					<estatura>1,41</estatura>
+					<massaCorporal>46,5</massaCorporal>
+					<abdominal>2</abdominal>
+					<imc>18,95</imc>
+					<sentar_e_alcancar>18</sentar_e_alcancar>
+					<sentar_e_alcancar_sb>0</sentar_e_alcancar_sb>
+					<nove_min>1200</nove_min>
+					<seis_min>0</seis_min>
+					<arremesso_medicine_ball>3,80</arremesso_medicine_ball>
+					<quadrado>3,6</quadrado>
+					<salto_distancia>2,00</salto_distancia>
+					<nove_min_dm>1200</nove_min_dm>
+					<seis_min_dm>0</seis_min_dm>
+					<corrida20m>3</corrida20m>
+				</avaliacao>
+		</aluno>
+		<aluno>
+			<nomeAluno>Gustavo Casanova</nomeAluno>
+			<genero>Masculino</genero>
+			<dataNascimento>12/07/2000</dataNascimento>
+			<nomeMae>Sueli Nunes</nomeMae>
+			<nomePai>Daniel Casanova</nomePai>
+				<avaliacao>
+					<dataAvaliacao>23/06/2013</dataAvaliacao>
+					<!--horario>16:00</horario -->
+					<!--temperatura>23</temperatura -->
+					<!--localAvaliacao>Escola do Centro</localAvaliacao -->
+						<!--cidadeAvaliacao>Pelotas</cidadeAvaliacao -->
+						<!--estadoAvaliacao>RS</estadoAvaliacao -->
+					<envergadura>1,49</envergadura>
+					<estatura>1,47</estatura>
+					<massaCorporal>49,6</massaCorporal>
+					<abdominal>4</abdominal>
+					<imc>21,53</imc>
+					<sentar_e_alcancar>17</sentar_e_alcancar>
+					<sentar_e_alcancar_sb>13</sentar_e_alcancar_sb>
+					<nove_min>0</nove_min>
+					<seis_min>1020</seis_min>
+					<arremesso_medicine_ball>3,40</arremesso_medicine_ball>
+					<quadrado>4,6</quadrado>
+					<salto_distancia>1,6</salto_distancia>
+					<nove_min_dm>0</nove_min_dm>
+					<seis_min_dm>1020</seis_min_dm>
+					<corrida20m>5</corrida20m>
+				</avaliacao>
+		</aluno>
+	</turma>
+	<turma>
+		<nomeTurma>Turma Tal</nomeTurma>
+		<aluno>
+			<nomeAluno>Henrique Gonçalves</nomeAluno>
+			<genero>Masculino</genero>
+			<dataNascimento>08/09/1998</dataNascimento>
+			<nomeMae>Neusa Farias</nomeMae>
+			<nomePai>Antônio Gonçalves</nomePai>
+				<avaliacao>
+					<dataAvaliacao>02/07/2013</dataAvaliacao>
+					<!--horario>08:15</horario -->
+					<!--temperatura>15</temperatura -->
+					<!--localAvaliacao>Escola Multi</localAvaliacao -->
+						<!--cidadeAvaliacao>Pelotas</cidadeAvaliacao -->
+						<!--estadoAvaliacao>RS</estadoAvaliacao -->
+					<envergadura>1,60</envergadura>
+					<estatura>1,55</estatura>
+					<massaCorporal>60</massaCorporal>
+					<abdominal>4</abdominal>
+					<imc>25,67</imc>
+					<sentar_e_alcancar>15</sentar_e_alcancar>
+					<sentar_e_alcancar_sb>0</sentar_e_alcancar_sb>
+					<nove_min>1300</nove_min>
+					<seis_min>0</seis_min>
+					<arremesso_medicine_ball>4,15</arremesso_medicine_ball>
+					<quadrado>3,8</quadrado>
+					<salto_distancia>1,87</salto_distancia>
+					<nove_min_dm>1300</nove_min_dm>
+					<seis_min_dm>0</seis_min_dm>
+					<corrida20m>6</corrida20m>
+				</avaliacao>
+		</aluno>
+		<aluno>
+			<nomeAluno>Carlos Nunes</nomeAluno>
+			<genero>Masculino</genero>
+			<dataNascimento>24/11/1996</dataNascimento>
+			<nomeMae>Rosa de Oliveira</nomeMae>
+			<nomePai>Francisco Nunes</nomePai>
+				<avaliacao>
+					<dataAvaliacao>02/07/2013</dataAvaliacao>
+					<!--horario>08:45</horario -->
+					<!--temperatura>15</temperatura -->
+					<!--localAvaliacao>Escola Multi</localAvaliacao -->
+						<!--cidadeAvaliacao>Pelotas</cidadeAvaliacao -->
+						<!--estadoAvaliacao>RS</estadoAvaliacao -->
+					<envergadura>1,56</envergadura>
+					<estatura>1,55</estatura>
+					<massaCorporal>49,8</massaCorporal>
+					<abdominal>3</abdominal>
+					<imc>18,76</imc>
+					<sentar_e_alcancar>16</sentar_e_alcancar>
+					<sentar_e_alcancar_sb>12</sentar_e_alcancar_sb>
+					<nove_min>1600</nove_min>
+					<seis_min>0</seis_min>
+					<arremesso_medicine_ball>4,30</arremesso_medicine_ball>
+					<quadrado>4</quadrado>
+					<salto_distancia>2,30</salto_distancia>
+					<nove_min_dm>1600</nove_min_dm>
+					<seis_min_dm>0</seis_min_dm>
+					<corrida20m>3</corrida20m>
+				</avaliacao>
+		</aluno>
+		<aluno>
+			<nomeAluno>Nilmar Garcia</nomeAluno>
+			<genero>Masculino</genero>
+			<dataNascimento>28/08/1996</dataNascimento>
+			<nomeMae>Mariana Carvalho</nomeMae>
+			<nomePai>José Garcia</nomePai>
+				<avaliacao>
+					<dataAvaliacao>02/07/2013</dataAvaliacao>
+					<!--horario>09:15</horario -->
+					<!--temperatura>15</temperatura -->
+					<!--localAvaliacao>Escola Multi</localAvaliacao -->
+						<!--cidadeAvaliacao>Pelotas</cidadeAvaliacao -->
+						<!--estadoAvaliacao>RS</estadoAvaliacao -->
+					<envergadura>1,55</envergadura>
+					<estatura>1,54</estatura>
+					<massaCorporal>49,6</massaCorporal>
+					<abdominal>5</abdominal>
+					<imc>19,34</imc>
+					<sentar_e_alcancar>12</sentar_e_alcancar>
+					<sentar_e_alcancar_sb>0</sentar_e_alcancar_sb>
+					<nove_min>1420</nove_min>
+					<seis_min>0</seis_min>
+					<arremesso_medicine_ball>3,30</arremesso_medicine_ball>
+					<quadrado>3,4</quadrado>
+					<salto_distancia>2,23</salto_distancia>
+					<nove_min_dm>1420</nove_min_dm>
+					<seis_min_dm>0</seis_min_dm>
+					<corrida20m>3,2</corrida20m>
+				</avaliacao>
+		</aluno>
+		<aluno>
+			<nomeAluno>Fernando Souza</nomeAluno>
+			<genero>Masculino</genero>
+			<dataNascimento>12/01/2000</dataNascimento>
+			<nomeMae>Edina Meireles</nomeMae>
+			<nomePai>Mauro Souza</nomePai>
+				<avaliacao>
+					<dataAvaliacao>02/07/2013</dataAvaliacao>
+					<!--horario>09:45</horario -->
+					<!--temperatura>16</temperatura -->
+					<!--localAvaliacao>Escola Multi</localAvaliacao -->
+						<!--cidadeAvaliacao>Pelotas</cidadeAvaliacao -->
+						<!--estadoAvaliacao>RS</estadoAvaliacao -->
+					<envergadura>1,46</envergadura>
+					<estatura>1,42</estatura>
+					<massaCorporal>44,5</massaCorporal>
+					<abdominal>2</abdominal>
+					<imc>20,45</imc>
+					<sentar_e_alcancar>14</sentar_e_alcancar>
+					<sentar_e_alcancar_sb>10</sentar_e_alcancar_sb>
+					<nove_min>1300</nove_min>
+					<seis_min>0</seis_min>
+					<arremesso_medicine_ball>3,63</arremesso_medicine_ball>
+					<quadrado>3,6</quadrado>
+					<salto_distancia>2,57</salto_distancia>
+					<nove_min_dm>1300</nove_min_dm>
+					<seis_min_dm>0</seis_min_dm>
+					<corrida20m>3,4</corrida20m>
+				</avaliacao>
+		</aluno>
+		<aluno>
+			<nomeAluno>Rita Castro</nomeAluno>
+			<genero>Feminino</genero>
+			<dataNascimento>14/04/1997</dataNascimento>
+			<nomeMae>Monique Furtado</nomeMae>
+			<nomePai>Henry Castro</nomePai>
+				<avaliacao>
+					<dataAvaliacao>02/07/2013</dataAvaliacao>
+					<!--horario>10:15</horario -->
+					<!--temperatura>16</temperatura -->
+					<!--localAvaliacao>Escola Multi</localAvaliacao -->
+						<!--cidadeAvaliacao>Pelotas</cidadeAvaliacao -->
+						<!--estadoAvaliacao>RS</estadoAvaliacao -->
+					<envergadura>1,46</envergadura>
+					<estatura>1,44</estatura>
+					<massaCorporal>42,3</massaCorporal>
+					<abdominal>3</abdominal>
+					<imc>19,87</imc>
+					<sentar_e_alcancar>15</sentar_e_alcancar>
+					<sentar_e_alcancar_sb>0</sentar_e_alcancar_sb>
+					<nove_min>0</nove_min>
+					<seis_min>1200</seis_min>
+					<arremesso_medicine_ball>2,20</arremesso_medicine_ball>
+					<quadrado>4,5</quadrado>
+					<salto_distancia>1,55</salto_distancia>
+					<nove_min_dm>0</nove_min_dm>
+					<seis_min_dm>1200</seis_min_dm>
+					<corrida20m>4,9</corrida20m>
+				</avaliacao>
+		</aluno>
+		<aluno>
+			<nomeAluno>Amélia Silveira</nomeAluno>
+			<genero>Feminino</genero>
+			<dataNascimento>22/10/2001</dataNascimento>
+			<nomeMae>Ana Antunes</nomeMae>
+			<nomePai>César Silveira</nomePai>
+				<avaliacao>
+					<dataAvaliacao>02/07/2013</dataAvaliacao>
+					<!--horario>10:45</horario -->
+					<!--temperatura>17</temperatura -->
+					<!--localAvaliacao>Escola Multi</localAvaliacao -->
+						<!--cidadeAvaliacao>Pelotas</cidadeAvaliacao -->
+						<!--estadoAvaliacao>RS</estadoAvaliacao -->
+					<envergadura>1,41</envergadura>
+					<estatura>1,39</estatura>
+					<massaCorporal>42,2</massaCorporal>
+					<abdominal>4</abdominal>
+					<imc>21,35</imc>
+					<sentar_e_alcancar>13</sentar_e_alcancar>
+					<sentar_e_alcancar_sb>8</sentar_e_alcancar_sb>
+					<nove_min>1100</nove_min>
+					<seis_min>0</seis_min>
+					<arremesso_medicine_ball>2,80</arremesso_medicine_ball>
+					<quadrado>3,8</quadrado>
+					<salto_distancia>1,67</salto_distancia>
+					<nove_min_dm>1100</nove_min_dm>
+					<seis_min_dm>0</seis_min_dm>
+					<corrida20m>3,6</corrida20m>
+				</avaliacao>
+		</aluno>
+		<aluno>
+			<nomeAluno>Antônia Vasconcelos</nomeAluno>
+			<genero>Feminino</genero>
+			<dataNascimento>29/12/2002</dataNascimento>
+			<nomeMae>Maria Fonseca</nomeMae>
+			<nomePai>Júlio Vasconcelos</nomePai>
+				<avaliacao>
+					<dataAvaliacao>02/07/2013</dataAvaliacao>
+					<!--horario>11:15</horario -->
+					<!--temperatura>17</temperatura -->
+					<!--localAvaliacao>Escola Multi</localAvaliacao -->
+						<!--cidadeAvaliacao>Pelotas</cidadeAvaliacao -->
+						<!--estadoAvaliacao>RS</estadoAvaliacao -->
+					<envergadura>1,38</envergadura>
+					<estatura>1,35</estatura>
+					<massaCorporal>39,8</massaCorporal>
+					<abdominal>2</abdominal>
+					<imc>18,93</imc>
+					<sentar_e_alcancar>16</sentar_e_alcancar>
+					<sentar_e_alcancar_sb>13</sentar_e_alcancar_sb>
+					<nove_min>1300</nove_min>
+					<seis_min>0</seis_min>
+					<arremesso_medicine_ball>2,65</arremesso_medicine_ball>
+					<quadrado>3,6</quadrado>
+					<salto_distancia>1,95</salto_distancia>
+					<nove_min_dm>1300</nove_min_dm>
+					<seis_min_dm>0</seis_min_dm>
+					<corrida20m>3,1</corrida20m>
+				</avaliacao>
+		</aluno>
+	</turma>
+</professor>
+</relatorio>
