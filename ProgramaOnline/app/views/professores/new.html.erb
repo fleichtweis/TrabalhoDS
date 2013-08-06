@@ -1,0 +1,15 @@
+<h1>CADASTRO</h1>
+<%= form_tag :action => 'create' do %>
+
+	<p><label for="cpf">CPF</label>:
+	<%= text_field :professor, :cpf %></p>
+
+	<p><label for="cpf">NOME</label>:
+	<%= text_field :professor, :nome %></p>
+
+	<p><label for="cpf">SENHA</label>:
+	<%= password_field :senha, :cpf %></p>
+
+	<%= submit_tag "CADASTRAR" %>
+
+<% end %>

@@ -53,8 +53,23 @@ ProgramaOnline::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+ 
+  ## PROFESSORES ##
+  get 'professores' => 'professores#index'
+  get 'professores/cadastro' => 'professores#new'
+  get 'professores/:id' => 'professores#edit'
+  post 'professores/create' => 'professores#create'
 
-	resource :importar_relatorios
-		post 'new'    => 'importar_relatorios#create'
+  ## INSTITUIÇÕES ##
+  get 'instituicoes' => 'instituicoes#index'
+  get 'instituicoes/nova' => 'instituicoes#new'
+  get 'instituicoes/:id' => 'instituicoes#edit'
+  post 'instituicoes/create' => 'instituicoes#create'
+
+  ## RELATÓRIOS ##
+  get 'relatorios' => 'relatorios#index'
+  get 'relatorios/nova' => 'relatorios#new'
+  get 'relatorios/:id' => 'relatorios#edit'
+  post 'relatorios/create' => 'relatorios#create'
 
 end
