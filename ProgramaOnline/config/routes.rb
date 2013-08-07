@@ -72,4 +72,16 @@ ProgramaOnline::Application.routes.draw do
   get 'relatorios/:id' => 'relatorios#edit'
   post 'relatorios/create' => 'relatorios#create'
 
+  ## CIDADES ##
+  get 'cidades' => 'cidades#index'
+  get 'cidades/nova' => 'cidades#new'
+  get 'cidades/:id' => 'cidades#edit'
+  post 'cidades/create' => 'cidades#create'
+
+  ## ESTADOS ##
+  get 'estados' => 'estados#index'
+  get 'estados/novo' => 'estados#new'
+  get 'estados/:id' => 'estados#edit'
+  post 'estados/create' => 'estados#create'
+
 end

@@ -1,0 +1,16 @@
+<table>
+	<thead>
+		<th>ESTADO</th>
+		<th>SIGLA</th>
+		<th>&nbsp;</th>
+	</thead>
+	<tbody>
+	<% @estados.to_a.each do |estado| %>
+		<tr>
+			<td><%= estado[1] %></td>
+			<td><%= estado[2] %></td>
+			<td>&nbsp;</td>
+		</tr>	
+	<% end %>
+	</tbody>
+</table>

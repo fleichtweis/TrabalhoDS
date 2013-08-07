@@ -1,0 +1,12 @@
+<h1>CADASTRAR ESTADO</h1>
+<%= form_tag :action => 'create' do %>
+
+	<p><label for="cpf">NOME</label>:
+	<%= text_field :estado, :nome %></p>
+
+	<p><label for="cpf">SIGLA</label>:
+	<%= text_field :estado, :sigla %></p>
+
+	<%= submit_tag "CADASTRAR" %>
+
+<% end %>

@@ -7,6 +7,7 @@ class RelatoriosController < ApplicationController
 	end
 
 	def create
+		render text: params[:post].inspect
 	end
 
 	def edit
