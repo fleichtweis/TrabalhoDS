@@ -42,7 +42,7 @@ class EstadosController < ApplicationController
 			raw_sql = "UPDATE estados set #{set.join(', ')} WHERE id = #{params[:id]}"
 			# EXECUTA O SQL
 			ActiveRecord::Base.connection.execute(raw_sql)
-			flash[:notice] = "Estado criado com sucesso!"
+			flash[:notice] = "Estado alterado com sucesso!"
 		end
 		redirect_to :action => :index
 	end
