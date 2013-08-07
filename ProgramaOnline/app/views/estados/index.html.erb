@@ -9,7 +9,10 @@
 		<tr>
 			<td><%= estado[1] %></td>
 			<td><%= estado[2] %></td>
-			<td>&nbsp;</td>
+			<td>
+				<%= link_to "Editar", {:action => :edit, :id => estado[0]} %>
+				<%= link_to "Excluir", {:action => :delete, :id => estado[0]}, {:method => :post, :confirm => 'Tens certeza?'} %>
+			</td>
 		</tr>	
 	<% end %>
 	</tbody>

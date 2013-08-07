@@ -83,5 +83,7 @@ ProgramaOnline::Application.routes.draw do
   get 'estados/novo' => 'estados#new'
   get 'estados/:id' => 'estados#edit'
   post 'estados/create' => 'estados#create'
+  post 'estados/update/:id' => 'estados#update'
+  post 'estados/delete/:id' => 'estados#delete'
 
 end

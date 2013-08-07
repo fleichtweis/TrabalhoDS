@@ -1,5 +1,5 @@
 <h1>EDITAR ESTADO</h1>
-<%= form_tag :action => 'create' do %>
+<%= form_tag({:action => 'update', :id => params[:id]}) do %>
 
 	<p><label for="cpf">NOME</label>:
 	<%= text_field :estado, :nome, :value => @estado.first[1] %></p>

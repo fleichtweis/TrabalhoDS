@@ -23,7 +23,7 @@ class EstadosController < ApplicationController
 			ActiveRecord::Base.connection.execute(raw_sql)
 			flash[:notice] = "Estado criado com sucesso!"
 		end
-		#redirect_to :action => :index
+		redirect_to :action => :index
 	end
 
 	def edit
@@ -32,9 +32,27 @@ class EstadosController < ApplicationController
 	end
 
 	def update
+		if request.post? # TESTE SE O FORMULÁRIO FOI SUBMETIDO
+			#ITERAÇÃO PARA ASSOCIAR CAMPOS E VALORES
+			set = []
+			params[:estado].each do |param|
+				set.push("#{param.first} = #{ActiveRecord::Base.connection.quote(param.last)}")
+			end
+			# CRIA INSERT BÁSICO PARA SALVAR OS DADOS NO BANCO
+			raw_sql = "UPDATE estados set #{set.join(', ')} WHERE id = #{params[:id]}"
+			# EXECUTA O SQL
+			ActiveRecord::Base.connection.execute(raw_sql)
+			flash[:notice] = "Estado criado com sucesso!"
+		end
+		redirect_to :action => :index
 	end
 
 	def delete
+		if request.post? # TESTE SE O FORMULÁRIO FOI SUBMETIDO
+			ActiveRecord::Base.connection.execute("DELETE FROM estados WHERE id = #{params[:id]}")
+			flash[:notice] = "Estado criado com sucesso!"
+		end
+		redirect_to :action => :index
 	end
 
 end
