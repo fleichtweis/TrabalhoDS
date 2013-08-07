@@ -15,7 +15,6 @@ class RelatoriosController < ApplicationController
 		f = File.open(Rails.root + "/" + file)
 		doc = Nokogiri::XML(f)
 		f.close
-		render text: doc.inspect
 	end
 
 	def edit
