@@ -50,7 +50,7 @@ class EstadosController < ApplicationController
 	def delete
 		if request.post? # TESTE SE O FORMULÁRIO FOI SUBMETIDO
 			ActiveRecord::Base.connection.execute("DELETE FROM estados WHERE id = #{params[:id]}")
-			flash[:notice] = "Estado criado com sucesso!"
+			flash[:notice] = "Estado excluido com sucesso!"
 		end
 		redirect_to :action => :index
 	end

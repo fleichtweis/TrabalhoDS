@@ -1,17 +1,11 @@
-<h1>CADASTRAR INSTITUIÇÃO</h1>
+<h1>CADASTRAR CIDADE</h1>
 <%= form_tag :action => 'create' do %>
 
-	<p><label for="cpf">CNPJ</label>:
-	<%= text_field :instituicao, :cnpj %></p>
+	<p><label for="cpf">ESTADO</label>:
+	<%= select :cidade, :estados_id, @estados %></p>
 
 	<p><label for="cpf">NOME</label>:
-	<%= text_field :instituicao, :nome %></p>
-
-	<p><label for="cpf">ENDEREÇO</label>:
-	<%= password_field :instituicao, :endereco %></p>
-
-	<p><label for="cpf">TELEFONE</label>:
-	<%= text_field :instituicao, :telefone %></p>
+	<%= text_field :cidade, :nome %></p>
 
 	<%= submit_tag "CADASTRAR" %>
 

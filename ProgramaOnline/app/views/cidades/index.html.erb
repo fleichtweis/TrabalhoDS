@@ -1,0 +1,19 @@
+<table>
+	<thead>
+		<th>CIDADE</th>
+		<th>ESTADO</th>
+		<th>&nbsp;</th>
+	</thead>
+	<tbody>
+	<% @cidades.to_a.each do |cidade| %>
+		<tr>
+			<td><%= cidade[1] %></td>
+			<td><%= cidade[4] %></td>
+			<td>
+				<%= link_to "Editar", {:action => :edit, :id => cidade[0]} %>
+				<%= link_to "Excluir", {:action => :delete, :id => cidade[0]}, {:method => :post, :confirm => 'Tens certeza?'} %>
+			</td>
+		</tr>	
+	<% end %>
+	</tbody>
+</table>

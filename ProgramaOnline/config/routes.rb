@@ -77,6 +77,8 @@ ProgramaOnline::Application.routes.draw do
   get 'cidades/nova' => 'cidades#new'
   get 'cidades/:id' => 'cidades#edit'
   post 'cidades/create' => 'cidades#create'
+  post 'cidades/update/:id' => 'cidades#update'
+  post 'cidades/delete/:id' => 'cidades#delete'
 
   ## ESTADOS ##
   get 'estados' => 'estados#index'

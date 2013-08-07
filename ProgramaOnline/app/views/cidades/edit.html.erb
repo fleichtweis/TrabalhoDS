@@ -1,0 +1,13 @@
+<%= debug @cidade %>
+<h1>EDITAR CIDADE</h1>
+<%= form_tag :action => 'update' do %>
+
+	<p><label for="cpf">ESTADO</label>:
+	<%= select :cidade, :estados_id, @estados, :selected => @cidade[2] %></p>
+
+	<p><label for="cpf">NOME</label>:
+	<%= text_field :cidade, :nome, :value => @cidade[1] %></p>
+
+	<%= submit_tag "CADASTRAR" %>
+
+<% end %>
