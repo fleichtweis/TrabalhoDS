@@ -1,0 +1,4 @@
+<%= form_for :relatorio, :url => url_for(:controller => :relatorios, :action => :create), :html => {:multipart => true} do |f| %>
+  <%= f.file_field :my_file %>
+  <%= f.submit "ENVIAR" %>
+<% end %>

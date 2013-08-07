@@ -1,3 +1,6 @@
+require 'fileutils'
+require 'nokogiri'
+
 class RelatoriosController < ApplicationController
 
 	def index
@@ -7,7 +10,12 @@ class RelatoriosController < ApplicationController
 	end
 
 	def create
-		render text: params[:post].inspect
+		tmp = params[:relatorio][:my_file].tempfile
+		file = File.join("public", params[:relatorio][:my_file].original_filename)
+		f = File.open(Rails.root + "/" + file)
+		doc = Nokogiri::XML(f)
+		f.close
+		render text: doc.inspect
 	end
 
 	def edit

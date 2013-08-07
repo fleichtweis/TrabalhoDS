@@ -68,7 +68,7 @@ ProgramaOnline::Application.routes.draw do
 
   ## RELATÓRIOS ##
   get 'relatorios' => 'relatorios#index'
-  get 'relatorios/nova' => 'relatorios#new'
+  get 'relatorios/novo' => 'relatorios#new'
   get 'relatorios/:id' => 'relatorios#edit'
   post 'relatorios/create' => 'relatorios#create'
 

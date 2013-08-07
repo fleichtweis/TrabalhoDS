@@ -1,6 +1,8 @@
 class InstituicoesController < ApplicationController
 
 	def index
+		@instituicoes = ActiveRecord::Base.connection.execute("SELECT * FROM instituicoes INNER JOIN cidades on instituicoes.cidade_id = cidades.id INNER JOIN estados on cidades.estados_id = estados.id")
+		@instituicoes = @instituicoes.to_a
 	end
 
 	def new
