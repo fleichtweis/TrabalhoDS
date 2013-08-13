@@ -1,5 +1,7 @@
 class EstadosController < ApplicationController
 
+	layout 'bootstrap'
+
 	def index
 		@estados = ActiveRecord::Base.connection.execute("SELECT * FROM estados")
 		@estados = @estados.to_a
