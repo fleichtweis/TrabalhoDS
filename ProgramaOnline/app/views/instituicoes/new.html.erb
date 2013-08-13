@@ -1,18 +1,52 @@
-<h1>CADASTRAR INSTITUIÇÃO</h1>
-<%= form_tag :action => 'create' do %>
+<div class="row">
+	<div class="span12">
+		<ul class="breadcrumb">
+			<li class="active">Instituições<span class="divider">&raquo;</span></li>
+			<li class="active">Adicionar</li>
+		</ul>
+	</div>
+</div>
 
-	<p><label for="cpf">CNPJ</label>:
-	<%= text_field :instituicao, :cnpj %></p>
+<div class="row">
+	<%= form_tag({:action => 'create'}, {:class => 'form-horizontal'}) do %>
+		<fieldset>
+			<legend>CADASTRAR INSTITUIÇÃO</legend>
+			<div class="control-group">
+				<label class="control-label" for="instituicao_cnpj">CNPJ</label>
+				<div class="controls">
+					<%= text_field :instituicao, :cnpj %>
+				</div>
+			</div>
 
-	<p><label for="cpf">NOME</label>:
-	<%= text_field :instituicao, :nome %></p>
+			<div class="control-group">
+				<label class="control-label" for="instituicao_nome">NOME</label>
+				<div class="controls">
+					<%= text_field :instituicao, :nome %>
+				</div>
+			</div>
 
-	<p><label for="cpf">ENDEREÇO</label>:
-	<%= password_field :instituicao, :endereco %></p>
+			<div class="control-group">
+				<label class="control-label" for="instituicao_endereco">ENDEREÇO</label>
+				<div class="controls">
+					<%= select :instituicao, :cidade_id, @cidades %>
+				</div>
+			</div>
 
-	<p><label for="cpf">TELEFONE</label>:
-	<%= text_field :instituicao, :telefone %></p>
+			<div class="control-group">
+				<label class="control-label" for="instituicao_endereco">ENDEREÇO</label>
+				<div class="controls">
+					<%= text_field :instituicao, :endereco %>
+				</div>
+			</div>
 
-	<%= submit_tag "CADASTRAR" %>
-
-<% end %>
+			<div class="control-group">
+				<label class="control-label" for="instituicao_telefone">TELEFONE</label>
+				<div class="controls">
+					<%= text_field :instituicao, :telefone %>
+				</div>
+			</div>
+	
+			<%= submit_tag "CADASTRAR" %>
+		</fieldset>
+	<% end %>
+</div>

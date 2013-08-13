@@ -1,15 +1,15 @@
 class InstituicoesController < ApplicationController
 
+	layout 'bootstrap'
+
 	def index
 		@instituicoes = ActiveRecord::Base.connection.execute("SELECT * FROM instituicoes INNER JOIN cidades on instituicoes.cidade_id = cidades.id INNER JOIN estados on cidades.estados_id = estados.id")
 		@instituicoes = @instituicoes.to_a
 	end
 
 	def new
-		@temp = ActiveRecord::Base.connection.execute("SELECT * FROM estados")
-		@estados = @temp.to_a
-		@temp = ActiveRecord::Base.connection.execute("SELECT * FROM cidades")
-		@cidades = @temp.to_a
+		@temp = ActiveRecord::Base.connection.execute("SELECT * FROM cidades INNER JOIN estados on cidades.estados_id = estados.id ORDER BY estados.nome, cidades.nome")
+		@cidades = @temp.to_a.collect { |c| ["#{c[4]} &raquo; #{c[1]}".html_safe, c[0]]}
 	end
 
 	def create
@@ -18,7 +18,7 @@ class InstituicoesController < ApplicationController
 			fields = []
 			values = []
 			params[:instituicao].each do |param|
-				fields.push(ActiveRecord::Base.connection.quote(param.first))
+				fields.push(param.first)
 				values.push(ActiveRecord::Base.connection.quote(param.last))
 			end
 			# CRIA INSERT BÁSICO PARA SALVAR OS DADOS NO BANCO

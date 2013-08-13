@@ -1,0 +1,28 @@
+<div class="span12">
+	<ul class="breadcrumb">
+		<li class="active">Instituições<span class="divider">&raquo;</span></li>
+		<li class="active">Listagem</li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div class="span12 pull-right"><%= link_to "Adicionar", {:action => :new}, {:class => 'btn btn-success'} %></div>
+<div class="clear"></div>
+<table class="table table-hover">
+	<thead>
+		<th>INSTITUIÇÃO</th>
+		<th>CIDADE</th>
+		<th>&nbsp;</th>
+	</thead>
+	<tbody>
+	<% @Instituicoes.to_a.each do |instituicao| %>
+		<tr>
+			<td><%= cidade[1] %></td>
+			<td><%= cidade[4] %></td>
+			<td>
+				<%= link_to "Editar", {:action => :edit, :id => cidade[0]}, {:class => 'btn btn-info'} %>
+				<%= link_to "Excluir", {:action => :delete, :id => cidade[0]}, {:method => :post, :confirm => 'Tens certeza?', :class => 'btn btn-danger'} %>
+			</td>
+		</tr>	
+	<% end %>
+	</tbody>
+</table>
