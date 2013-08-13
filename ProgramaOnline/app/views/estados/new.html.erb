@@ -1,22 +1,27 @@
-<fieldset>
-	<legend>CADASTRAR ESTADO</legend>
-	<%= form_tag({:action => 'create'}, {:class => 'form-horizontal'}) do %>
-	
+<ul class="breadcrumb">
+<li><a href="#">Home</a> <span class="divider">/</span></li>
+<li><a href="#">Library</a> <span class="divider">/</span></li>
+<li class="active">Data</li>
+</ul>
+<%= form_tag({:action => 'create'}, {:class => 'form-horizontal'}) do %>
+	<fieldset>
+		<legend>CADASTRAR ESTADO</legend>	
 		<div class="control-group">
-			<label class="control-label">NOME:</label>
+			<label class="control-label" for="estado_nome">NOME</label>
 			<div class="controls">
 				<%= text_field :estado, :nome, {:placeholder => 'nome'} %>
 			</div>
 		</div>
-
-			<label class="control-label">SIGLA:</label>
+		<div class="control-group">
+			<label for="estado_sigla" class="control-label">SIGLA</label>
 			<div class="controls">
-				<%= text_field :estado, :sigla, {:placeholder => 'sigla'} %>
-			<	
-		<div class="control-group">/div>
+				<%= text_field :estado, :sigla, {:placeholder => 'sigla', :maxlength => 2} %>	
+			</div>
 		</div>
 	
-		<%= submit_tag "CADASTRAR", :class => 'btn' %>
-	
-	<% end %>
-</fieldset>
+		<div class="control-group">
+			<%= submit_tag "CADASTRAR", :class => 'btn' %>
+		</div>
+	</fieldset>
+<% end %>
+

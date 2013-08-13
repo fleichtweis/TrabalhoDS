@@ -1,18 +1,19 @@
 <h1>EDITAR ESTADO</h1>
 <%= form_tag({:action => 'update', :id => params[:id]}, {:class => 'form-horizontal'}) do %>
-, {:class => 'form-horizontal'}
 
 	<div class="control-group">
-		<label class="control-label">NOME:</label>
+		<label class="control-label">NOME</label>
 		<div class="controls">
-			<%= text_field :estado, :nome, {:placeholder => 'nome'} %>
+			<%= text_field :estado, :nome, {:placeholder => 'nome', :value => @estado.first[1]} %>
 		</div>
 	</div>
-		<p><label for="cpf">NOME</label>:
-	<%= text_field :estado, :nome, :value => @estado.first[1] %></p>
 
-	<p><label for="cpf">SIGLA</label>:
-	<%= text_field :estado, :sigla, :value => @estado.first[2] %></p>
+	<div class="control-group">
+		<label class="control-label">SIGLA</label>
+		<div class="controls">
+			<%= text_field :estado, :sigla, {:placeholder => 'nome', :value => @estado.first[2], :maxlength => 2} %>
+		</div>
+	</div>
 
 	<%= submit_tag "EDITAR" %>
 
