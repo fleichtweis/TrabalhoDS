@@ -1,13 +1,31 @@
-<%= debug @cidade %>
-<h1>EDITAR CIDADE</h1>
-<%= form_tag :action => 'update' do %>
+<div class="row">
+	<div class="span12">
+		<ul class="breadcrumb">
+			<li class="active">Cidades<span class="divider">&raquo;</span></li>
+			<li class="active">Editar</li>
+		</ul>
+	</div>
+</div>
 
-	<p><label for="cpf">ESTADO</label>:
-	<%= select_tag :cidade['estados_id'], @estados, :selected => @cidade[2] %></p>
-
-	<p><label for="cpf">NOME</label>:
-	<%= text_field :cidade, :nome, :value => @cidade[1] %></p>
-
-	<%= submit_tag "CADASTRAR" %>
-
-<% end %>
+<div class="row">
+	<%= form_tag({:action => 'update'}, {:class => 'form-horizontal'}) do %>
+		<fieldset>
+			<legend>EDITAR CIDADE</legend>
+			<div class="control-group">
+				<label class="control-label" for="cidade_estados_id">ESTADO</label>
+				<div class="controls">
+					<%= select_tag 'cidade[estados_id]', options_for_select(@estados, @cidade.first[2]) %>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="cidade_nome">NOME</label>
+				<div class="controls">
+					<%= text_field :cidade, :nome, {:placeholder => 'nome', :value => @cidade.first[1]} %>
+				</div>
+			</div>
+			<div class="control-group">
+				<%= submit_tag "EDITAR", :class => 'btn' %>
+			</div>
+		</fieldset>
+	<% end %>
+</div>

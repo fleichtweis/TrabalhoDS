@@ -1,12 +1,31 @@
-<h1>CADASTRAR CIDADE</h1>
-<%= form_tag :action => 'create' do %>
+<div class="row">
+	<div class="span12">
+		<ul class="breadcrumb">
+			<li class="active">Cidades<span class="divider">&raquo;</span></li>
+			<li class="active">Adicionar</li>
+		</ul>
+	</div>
+</div>
 
-	<p><label for="cpf">ESTADO</label>:
-	<%= select :cidade, :estados_id, @estados %></p>
-
-	<p><label for="cpf">NOME</label>:
-	<%= text_field :cidade, :nome %></p>
-
-	<%= submit_tag "CADASTRAR" %>
-
-<% end %>
+<div class="row">
+	<%= form_tag({:action => 'create'}, {:class => 'form-horizontal'}) do %>
+		<fieldset>
+			<legend>CADASTRAR CIDADE</legend>
+			<div class="control-group">
+				<label class="control-label" for="cidade_estados_id">ESTADO</label>
+				<div class="controls">
+					<%= select :cidade, :estados_id, @estados %>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="cidade_nome">NOME</label>
+				<div class="controls">
+					<%= text_field :cidade, :nome, {:placeholder => 'nome'} %>
+				</div>
+			</div>
+			<div class="control-group">
+				<%= submit_tag "CADASTRAR", :class => 'btn' %>
+			</div>
+		</fieldset>
+	<% end %>
+</div>

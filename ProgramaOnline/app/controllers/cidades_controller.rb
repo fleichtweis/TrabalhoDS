@@ -1,4 +1,6 @@
 class CidadesController < ApplicationController
+
+	layout 'bootstrap'
 	
 	def index
 		@cidades = ActiveRecord::Base.connection.execute("SELECT * FROM cidades INNER JOIN estados ON cidades.estados_id = estados.id")
@@ -37,6 +39,8 @@ class CidadesController < ApplicationController
 
 	def update
 		if request.post? # TESTE SE O FORMULÁRIO FOI SUBMETIDO
+			#render :text => params[:cidade].inspect
+			#return
 			#ITERAÇÃO PARA ASSOCIAR CAMPOS E VALORES
 			set = []
 			params[:cidade].each do |param|
