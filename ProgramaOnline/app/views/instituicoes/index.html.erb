@@ -10,17 +10,19 @@
 <table class="table table-hover">
 	<thead>
 		<th>INSTITUIÇÃO</th>
+		<th>CNPJ</th>
 		<th>CIDADE</th>
 		<th>&nbsp;</th>
 	</thead>
 	<tbody>
-	<% @Instituicoes.to_a.each do |instituicao| %>
+	<% @instituicoes.to_a.each do |instituicao| %>
 		<tr>
-			<td><%= cidade[1] %></td>
-			<td><%= cidade[4] %></td>
+			<td><%= instituicao[1] %></td>
+			<td><%= instituicao[0] %></td>
+			<td><%= "#{instituicao[6]} - #{instituicao[10]}" %></td>
 			<td>
-				<%= link_to "Editar", {:action => :edit, :id => cidade[0]}, {:class => 'btn btn-info'} %>
-				<%= link_to "Excluir", {:action => :delete, :id => cidade[0]}, {:method => :post, :confirm => 'Tens certeza?', :class => 'btn btn-danger'} %>
+				<%= link_to "Editar", {:action => :edit, :id => instituicao[0]}, {:class => 'btn btn-info'} %>
+				<%= link_to "Excluir", {:action => :delete, :id => instituicao[0]}, {:method => :post, :confirm => 'Tens certeza?', :class => 'btn btn-danger'} %>
 			</td>
 		</tr>	
 	<% end %>

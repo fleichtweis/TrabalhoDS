@@ -19,15 +19,19 @@ class InstituicoesController < ApplicationController
 			values = []
 			params[:instituicao].each do |param|
 				fields.push(param.first)
-				values.push(ActiveRecord::Base.connection.quote(param.last))
+				if param.first == 'cnpj' || param.first == 'telefone'
+					values.push(ActiveRecord::Base.connection.quote(param.last.gsub(/[^0-9]/, '')))
+				else
+					values.push(ActiveRecord::Base.connection.quote(param.last))
+				end
 			end
 			# CRIA INSERT BÁSICO PARA SALVAR OS DADOS NO BANCO
 			raw_sql = "INSERT INTO instituicoes (#{fields.join(', ')}) VALUES (#{values.join(', ')})"
-			render text: raw_sql
 			# EXECUTA O SQL
 			ActiveRecord::Base.connection.execute(raw_sql)
+			flash[:notice] = "Instituicao criada com sucesso!"
 		end
-		#redirect_to :action => :index
+		redirect_to :action => :index
 	end
 
 	def edit
