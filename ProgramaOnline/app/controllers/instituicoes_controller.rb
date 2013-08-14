@@ -35,11 +35,9 @@ class InstituicoesController < ApplicationController
 	end
 
 	def edit
-		@temp = ActiveRecord::Base.connection.execute("SELECT * FROM estados")
-		@estados = @temp.to_a
-		@temp = ActiveRecord::Base.connection.execute("SELECT * FROM cidades")
-		@cidades = @temp.to_a
-		@temp = ActiveRecord::Base.connection.execute("SELECT * FROM instituicoes where id = #{params[:id]}")
+		@temp = ActiveRecord::Base.connection.execute("SELECT * FROM cidades INNER JOIN estados on cidades.estados_id = estados.id ORDER BY estados.nome, cidades.nome")
+		@cidades = @temp.to_a.collect { |c| ["#{c[4]} &raquo; #{c[1]}".html_safe, c[0]]}
+		@temp = ActiveRecord::Base.connection.execute("SELECT * FROM instituicoes where cnpj = '#{params[:id]}'")
 		@instituicao = @temp.to_a
 	end
 
@@ -61,7 +59,7 @@ class InstituicoesController < ApplicationController
 
 	def delete
 		if request.post? # TESTE SE O FORMULÁRIO FOI SUBMETIDO
-			ActiveRecord::Base.connection.execute("DELETE FROM estados WHERE id = #{params[:id]}")
+			ActiveRecord::Base.connection.execute("DELETE FROM instituicoes WHERE cnpj = '#{params[:id]}'")
 			flash[:notice] = "Instituicao excluida com sucesso!"
 		end
 		redirect_to :action => :index

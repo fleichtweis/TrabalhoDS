@@ -10,39 +10,39 @@
 <div class="row">
 	<%= form_tag({:action => 'update'}, {:class => 'form-horizontal'}) do %>
 		<fieldset>
-			<legend>CADASTRAR INSTITUIÇÃO</legend>
+			<legend>EDITAR INSTITUIÇÃO</legend>
 			<div class="control-group">
 				<label class="control-label" for="instituicao_cnpj">CNPJ</label>
 				<div class="controls">
-					<%= text_field :instituicao, :cnpj, :value => @ %>
+					<%= text_field :instituicao, :cnpj, :value => @instituicao.first[0] %>
 				</div>
 			</div>
 
 			<div class="control-group">
 				<label class="control-label" for="instituicao_nome">NOME</label>
 				<div class="controls">
-					<%= text_field :instituicao, :nome %>
+					<%= text_field :instituicao, :nome, :value => @instituicao.first[1] %>
 				</div>
 			</div>
 
 			<div class="control-group">
 				<label class="control-label" for="instituicao_endereco">CIDADE</label>
 				<div class="controls">
-					<%= select :instituicao, :cidade_id, @cidades %>
+					<%= select_tag 'instituicao[cidade_id]', options_for_select(@cidades, @instituicao.first[2]) %>
 				</div>
 			</div>
 
 			<div class="control-group">
 				<label class="control-label" for="instituicao_endereco">ENDEREÇO</label>
 				<div class="controls">
-					<%= text_field :instituicao, :endereco %>
+					<%= text_field :instituicao, :endereco, :value => @instituicao.first[3] %>
 				</div>
 			</div>
 
 			<div class="control-group">
 				<label class="control-label" for="instituicao_telefone">TELEFONE</label>
 				<div class="controls">
-					<%= text_field :instituicao, :telefone %>
+					<%= text_field :instituicao, :telefone, :value => @instituicao.first[4] %>
 				</div>
 			</div>
 	

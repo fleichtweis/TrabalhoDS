@@ -65,6 +65,7 @@ ProgramaOnline::Application.routes.draw do
   get 'instituicoes/nova' => 'instituicoes#new'
   get 'instituicoes/:id' => 'instituicoes#edit'
   post 'instituicoes/create' => 'instituicoes#create'
+  post 'instituicoes/update/:id' => 'instituicoes#update'
   post 'instituicoes/delete/:id' => 'instituicoes#delete'
 
   ## RELATÓRIOS ##
