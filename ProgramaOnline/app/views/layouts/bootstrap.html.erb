@@ -4,6 +4,7 @@
   <title>PRODOWN</title>
   <%= stylesheet_link_tag    "bootstrap", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "bootstrap.min", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -40,6 +41,23 @@
 			</div>
 		</div>
 		<div class="span9">
+			<% if flash[:alert] %>
+				<div class="clear"></div>
+				<div class="span12 pull-right">
+					<div class="alert alert-error">
+	    					<strong><%= flash[:alert] %></strong>
+					</div>
+				</div>
+				<div class="clear"></div>
+			<% elsif flash[:notice] %>
+				<div class="clear"></div>
+				<div class="span12 pull-right">
+					<div class="alert alert-success">
+	    					<strong><%= flash[:notice] %></strong>
+					</div>
+				</div>
+				<div class="clear"></div>
+			<% end %>
 			<%= yield %>
 		</div>
 	</div>

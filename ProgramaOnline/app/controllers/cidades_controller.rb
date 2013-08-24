@@ -24,7 +24,13 @@ class CidadesController < ApplicationController
 			# CRIA INSERT BÁSICO PARA SALVAR OS DADOS NO BANCO
 			raw_sql = "INSERT INTO cidades (#{fields.join(', ')}) VALUES (#{values.join(', ')})"
 			# EXECUTA O SQL
-			ActiveRecord::Base.connection.execute(raw_sql)
+			# EXECUTA O SQL
+			begin
+				ActiveRecord::Base.connection.execute(raw_sql)
+			rescue
+				flash[:alert] = "Erro ao criar a cidade. Tente novamente!"
+				return redirect_to :action => :index
+			end
 			flash[:notice] = "Cidade criada com sucesso!"
 		end
 		redirect_to :action => :index
@@ -49,15 +55,25 @@ class CidadesController < ApplicationController
 			# CRIA INSERT BÁSICO PARA SALVAR OS DADOS NO BANCO
 			raw_sql = "UPDATE cidades set #{set.join(', ')} WHERE id = #{params[:id]}"
 			# EXECUTA O SQL
-			ActiveRecord::Base.connection.execute(raw_sql)
-			flash[:notice] = "Cidade criada com sucesso!"
+			begin
+				ActiveRecord::Base.connection.execute(raw_sql)
+			rescue
+				flash[:alert] = "Erro ao editar a cidade. Tente novamente!"
+				return redirect_to :action => :index
+			end
+			flash[:notice] = "Cidade alterada com sucesso!"
 		end
 		redirect_to :action => :index
 	end
 
 	def delete
 		if request.post? # TESTE SE O FORMULÁRIO FOI SUBMETIDO
-			ActiveRecord::Base.connection.execute("DELETE FROM cidades WHERE id = #{params[:id]}")
+			begin
+				ActiveRecord::Base.connection.execute("DELETE FROM cidades WHERE id = #{params[:id]}")
+			rescue
+				flash[:alert] = "Erro ao excluir o estado. Tente novamente!"
+				return redirect_to :action => :index
+			end
 			flash[:notice] = "Cidade excluida com sucesso!"
 		end
 		redirect_to :action => :index

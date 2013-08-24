@@ -25,7 +25,10 @@
 				</div>
 			</div>
 	
-			<%= submit_tag "EDITAR" %>
+			<div class="options btn-group">
+				<%= button_tag(type: 'submit', class: "btn btn-primary") do %><i class="icon-check icon-white"></i> SALVAR<% end %>
+				<%= link_to_function "<i class='icon-remove'></i> CANCELAR".html_safe, "history.back()", :class => 'btn' %>
+			</div>
 		</fieldset>
 	<% end %>
 </div>

@@ -46,7 +46,10 @@
 				</div>
 			</div>
 	
-			<%= submit_tag "CADASTRAR" %>
+			<div class="options btn-group">
+				<%= button_tag(type: 'submit', class: "btn btn-primary") do %><i class="icon-check icon-white"></i> SALVAR<% end %>
+				<%= link_to "<i class='icon-remove'></i> CANCELAR".html_safe, {:action => :index}, :class => 'btn' %>
+			</div>
 		</fieldset>
 	<% end %>
 </div>

@@ -28,7 +28,12 @@ class InstituicoesController < ApplicationController
 			# CRIA INSERT BÁSICO PARA SALVAR OS DADOS NO BANCO
 			raw_sql = "INSERT INTO instituicoes (#{fields.join(', ')}) VALUES (#{values.join(', ')})"
 			# EXECUTA O SQL
-			ActiveRecord::Base.connection.execute(raw_sql)
+			begin
+				ActiveRecord::Base.connection.execute(raw_sql)
+			rescue
+				flash[:alert] = "Erro ao criar a instituicao. Tente novamente!"
+				return redirect_to :action => :index
+			end
 			flash[:notice] = "Instituicao criada com sucesso!"
 		end
 		redirect_to :action => :index
@@ -51,7 +56,12 @@ class InstituicoesController < ApplicationController
 			# CRIA INSERT BÁSICO PARA SALVAR OS DADOS NO BANCO
 			raw_sql = "UPDATE estados set #{set.join(', ')} WHERE id = #{params[:id]}"
 			# EXECUTA O SQL
-			ActiveRecord::Base.connection.execute(raw_sql)
+			begin
+				ActiveRecord::Base.connection.execute(raw_sql)
+			rescue
+				flash[:alert] = "Erro ao editar o estadoa instituicao. Tente novamente!"
+				return redirect_to :action => :index
+			end
 			flash[:notice] = "Instituicao alterada com sucesso!"
 		end
 		redirect_to :action => :index
@@ -59,7 +69,12 @@ class InstituicoesController < ApplicationController
 
 	def delete
 		if request.post? # TESTE SE O FORMULÁRIO FOI SUBMETIDO
-			ActiveRecord::Base.connection.execute("DELETE FROM instituicoes WHERE cnpj = '#{params[:id]}'")
+			begin
+				ActiveRecord::Base.connection.execute("DELETE FROM instituicoes WHERE cnpj = '#{params[:id]}'")
+			rescue
+				flash[:alert] = "Erro ao excluir o estado. Tente novamente!"
+				return redirect_to :action => :index
+			end
 			flash[:notice] = "Instituicao excluida com sucesso!"
 		end
 		redirect_to :action => :index
