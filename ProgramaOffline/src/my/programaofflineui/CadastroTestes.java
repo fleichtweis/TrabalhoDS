@@ -4,7 +4,10 @@
  */
 package my.programaofflineui;
 
+import com.thoughtworks.xstream.XStream;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,11 +29,26 @@ public class CadastroTestes extends javax.swing.JFrame {
 	private String sentar_e_alcancar_sb;
 	private String nove_min_s;
 	private String seis_min_s;
+        
+        //Setters
         public void setAbdominal(String abdominal){
             this.abdominal=abdominal;
         }
-        //...
-        
+        public void setImc(String imc){
+            this.imc=imc;
+        }
+        public void setSentarAlcancar(String sentaralcancar){
+            this.sentar_e_alcancar=sentaralcancar;
+        }
+        public void setSentarAlcancarSb(String sentaralcancarsb){
+            this.sentar_e_alcancar_sb=sentaralcancarsb;
+        }
+        public void setNoveMin(String novemin){
+            this.nove_min_s=novemin;
+        }
+        public void setSeisMin(String seismin){
+            this.seis_min_s=seismin;
+        }
     }
 
 
@@ -41,10 +59,26 @@ public class CadastroTestes extends javax.swing.JFrame {
 	private String salto_dist;
 	private String nove_min_dm;
 	private String seis_min_dm;
+        //Setters
         public void setArremessoMedicineBall(String arremeso_medicine_ball){
             this.arremeso_medicine_ball=arremeso_medicine_ball;
         }
-        //...
+        public void setCorridaVinteM(String corrida20m){
+            this.corrida_20_m=corrida20m;
+        }
+        public void setQuadrado(String quadrado){
+            this.quadrado=quadrado;
+        }
+        public void setSaltoDist(String saltodist){
+            this.salto_dist=saltodist;
+        }
+        public void setNoveMinDm(String novemindm){
+            this.nove_min_dm=novemindm;
+        }
+        public void setSeisMinDm(String seismindm){
+            this.seis_min_dm=seismindm;
+        }
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -439,14 +473,16 @@ public class CadastroTestes extends javax.swing.JFrame {
                             .addComponent(cm_sd)
                             .addComponent(m_9_dm)
                             .addComponent(m_6_dm))
-                        .addGap(18, 18, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(classCorrida_20m, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
-                            .addComponent(classQuadrado)
-                            .addComponent(classtSalto_dist)
-                            .addComponent(classNove_min_dm)
-                            .addComponent(classSeis_min_dm)
-                            .addComponent(classArremesso_medicine_ball)))))
+                        .addGap(36, 36, 36)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(classCorrida_20m, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(classArremesso_medicine_ball, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(classQuadrado)
+                                .addComponent(classtSalto_dist)
+                                .addComponent(classNove_min_dm)
+                                .addComponent(classSeis_min_dm, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(0, 26, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -491,7 +527,7 @@ public class CadastroTestes extends javax.swing.JFrame {
                     .addComponent(txtSeis_min_dm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(m_6_dm)
                     .addComponent(classSeis_min_dm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -508,7 +544,7 @@ public class CadastroTestes extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(230, 230, 230)
+                .addGap(316, 316, 316)
                 .addComponent(bttCadastrar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -526,13 +562,13 @@ public class CadastroTestes extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(m_9_s, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -650,6 +686,31 @@ public class CadastroTestes extends javax.swing.JFrame {
 
     private void bttCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttCadastrarMouseClicked
         if(evt.getSource() == bttCadastrar){
+            XStream xstream = new XStream();
+            
+            List testes = new ArrayList(1);
+           
+            TestesSaude testeSaude = new TestesSaude();
+            testeSaude.setAbdominal(txtAbdominal.getText());
+            testeSaude.setImc(txtIMC.getText());
+            testeSaude.setNoveMin(txtNove_min_s.getText());
+            testeSaude.setSeisMin(txtSeis_min_s.getText());
+            testeSaude.setSentarAlcancar(txtSentar_e_alcancar.getText());
+            testeSaude.setSentarAlcancarSb(txtSentar_e_alcancar_sb.getText());
+    
+            testes.add(testeSaude);
+            
+            TestesMotor testeMotor = new TestesMotor();
+            
+            testeMotor.setArremessoMedicineBall(txtArremesso_medicine_ball.getText());
+            testeMotor.setCorridaVinteM(txtCorrida_20m.getText());
+            testeMotor.setNoveMinDm(txtNove_min_dm.getText());
+            testeMotor.setQuadrado(txtQuadrado.getText());
+            testeMotor.setSaltoDist(txtSalto_dist.getText());
+            testeMotor.setSeisMinDm(txtSeis_min_dm.getText());
+            
+            testes.add(testeMotor);
+            
             JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!");
         }
     }//GEN-LAST:event_bttCadastrarMouseClicked
