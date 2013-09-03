@@ -1,10 +1,10 @@
 <list>
   <my.programaofflineui.CadastroAlunosUI_-Aluno>
-    <id>0</id>
-    <nome></nome>
+    <id>1</id>
+    <nome>Mohammad</nome>
     <rg></rg>
     <cpf></cpf>
-    <sexo>Masculino</sexo>
+    <sexo> </sexo>
     <nomePai></nomePai>
     <nomeMae></nomeMae>
   </my.programaofflineui.CadastroAlunosUI_-Aluno>
