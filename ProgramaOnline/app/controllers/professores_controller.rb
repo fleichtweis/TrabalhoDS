@@ -22,7 +22,12 @@ class ProfessoresController < ApplicationController
 			# CRIA INSERT BÁSICO PARA SALVAR OS DADOS NO BANCO
 			raw_sql = "INSERT INTO professores (#{fields.join(', ')}) VALUES (#{values.join(', ')})"
 			# EXECUTA O SQL
-			ActiveRecord::Base.connection.execute(raw_sql)
+			begin
+				ActiveRecord::Base.connection.execute(raw_sql)
+			rescue
+				flash[:alert] = "Erro ao cadastrar o professor. Tente novamente!"
+				return redirect_to :action => :index
+			end
 			flash[:notice] = "Professor criado com sucesso!"
 		end
 		redirect_to :action => :index
@@ -44,7 +49,12 @@ class ProfessoresController < ApplicationController
 			# CRIA INSERT BÁSICO PARA SALVAR OS DADOS NO BANCO
 			raw_sql = "UPDATE professores set #{set.join(', ')} WHERE id = #{params[:id]}"
 			# EXECUTA O SQL
-			ActiveRecord::Base.connection.execute(raw_sql)
+			begin
+				ActiveRecord::Base.connection.execute(raw_sql)
+			rescue
+				flash[:alert] = "Erro ao editar o professor. Tente novamente!"
+				return redirect_to :action => :index
+			end
 			flash[:notice] = "Professor alterado com sucesso!"
 		end
 		redirect_to :action => :index
@@ -52,7 +62,12 @@ class ProfessoresController < ApplicationController
 
 	def delete
 		if request.post? # TESTE SE O FORMULÁRIO FOI SUBMETIDO
-			ActiveRecord::Base.connection.execute("DELETE FROM professores WHERE id = #{params[:id]}")
+			begin
+				ActiveRecord::Base.connection.execute("DELETE FROM professores WHERE id = #{params[:id]}")
+			rescue
+				flash[:alert] = "Erro ao excluir professor. Tente novamente!"
+				return redirect_to :action => :index
+			end
 			flash[:notice] = "Professor excluido com sucesso!"
 		end
 		redirect_to :action => :index

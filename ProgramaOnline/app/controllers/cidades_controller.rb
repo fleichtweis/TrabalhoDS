@@ -24,7 +24,6 @@ class CidadesController < ApplicationController
 			# CRIA INSERT BÁSICO PARA SALVAR OS DADOS NO BANCO
 			raw_sql = "INSERT INTO cidades (#{fields.join(', ')}) VALUES (#{values.join(', ')})"
 			# EXECUTA O SQL
-			# EXECUTA O SQL
 			begin
 				ActiveRecord::Base.connection.execute(raw_sql)
 			rescue
