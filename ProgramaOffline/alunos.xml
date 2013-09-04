@@ -1,11 +1,20 @@
 <list>
   <my.programaofflineui.CadastroAlunosUI_-Aluno>
     <id>1</id>
-    <nome>Jose</nome>
+    <nome>Capeta</nome>
     <rg></rg>
     <cpf></cpf>
-    <sexo>Feminino</sexo>
+    <sexo>Masculino</sexo>
     <nomePai></nomePai>
     <nomeMae></nomeMae>
+  </my.programaofflineui.CadastroAlunosUI_-Aluno>
+  <my.programaofflineui.CadastroAlunosUI_-Aluno>
+	<id>2</id>
+    <nome>Mohammad</nome>
+    <rg>60597068xxx</rg>
+    <cpf>0271894545</cpf>
+    <sexo>Masculino</sexo>
+    <nomePai>PAPA</nomePai>
+    <nomeMae>MAMA</nomeMae>
   </my.programaofflineui.CadastroAlunosUI_-Aluno>
 </list>
