@@ -8,8 +8,8 @@ class ProfessoresController < ApplicationController
 	end
 
 	def new
-		@instituicoes = ActiveRecord::Base.connection.execute("SELECT * FROM instituicoes");
-		@instituicoes = @insituicoes.to_a
+		@instituicoes = ActiveRecord::Base.connection.execute("SELECT * FROM instituicoes INNER JOIN cidades ON instituicoes.cidade_id = cidades.id INNER JOIN estados on cidades.estados_id = estados.id")
+		@instituicoes = @instituicoes.to_a.collect { |i| ["#{i[4]} &raquo; #{i[1]}".html_safe, i[0]]}
 	end
 
 	def create

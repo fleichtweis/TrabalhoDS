@@ -18,7 +18,7 @@
 	<% @instituicoes.to_a.each do |instituicao| %>
 		<tr>
 			<td><%= instituicao[1] %></td>
-			<td><%= instituicao[0][0..1] + "." + instituicao[0][2..4] + "." + instituicao[0][5..7] + "/" + instituicao[0][8..11] + "-" + instituicao[0][12..13] %></td>
+			<td><%= instituicao[0] %></td>
 			<td><%= "#{instituicao[6]} - #{instituicao[10]}" %></td>
 			<td>
 				<%= link_to "<i class='icon-edit icon-white'></i> Editar".html_safe, {:action => :edit, :id => instituicao[0]}, {:class => 'btn btn-info'} %>

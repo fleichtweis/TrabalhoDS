@@ -1,36 +1,37 @@
 <div class="span12 pull-right">
 	<ul class="breadcrumb">
-		<li class="active">Professores<span class="divider">&raquo;</span></li>
+		<li class="active">Administrador<span class="divider">&raquo;</span></li>
 		<li class="active">Cadastrar</li>
 	</ul>
 </div>
 
+
 <div class="span12 pull-right">
 	<%= form_tag({:action => 'create'}, {:class => 'form-horizontal'}) do %>
 		<fieldset>
-			<legend>CADASTRAR PROFESSOR</legend>
+			<legend>CADASTRAR ADMINISTRADOR</legend>
 			<div class="control-group">
-				<label class="control-label" for="professor_cpf">CPF</label>
+				<label class="control-label" for="administrador_cpf">CPF</label>
 				<div class="controls">
-					<%= text_field :professor, :cpf, {:placeholder => 'cpf'} %></p>
+					<%= text_field :administrador, :cpf, {:placeholder => 'cpf'} %>
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="professor_nome">NOME</label>
+				<label class="control-label" for="administrador_nome">NOME</label>
 				<div class="controls">
-					<%= text_field :professor, :nome, {:placeholder => 'nome'} %></p>
+					<%= text_field :administrador, :nome, {:placeholder => 'nome'} %>
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="instituicao_cnpj">INSTITUIÇÃO</label>
+				<label class="control-label" for="administrador_nome">E-MAIL</label>
 				<div class="controls">
-					<%= select :professor, :instituicao_cnpj, @instituicoes %>
+					<%= text_field :administrador, :email, {:placeholder => 'e-mail'} %>
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="professor_senha">SENHA</label>
+				<label class="control-label" for="administrador_nome">SENHA</label>
 				<div class="controls">
-					<%= text_field :professor, :senha, {:placeholder => 'senha', :type => :password} %></p>
+					<%= text_field :administrador, :senha, {:placeholder => 'senha', :type => :password} %>
 				</div>
 			</div>
 			<div class="options btn-group">

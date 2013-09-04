@@ -1,0 +1,26 @@
+<div class="span12 pull-right">
+	<ul class="breadcrumb">
+		<li class="active">Administradores<span class="divider">&raquo;</span></li>
+		<li class="active">Listagem</li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div class="span12 pull-right"><%= link_to "<i class='icon-plus icon-white'></i> Adicionar".html_safe, {:action => :new}, {:class => 'btn btn-success'} %></div>
+<div class="clear"></div>
+<table class="table table-hover">
+	<thead>
+		<th>ADMINISTRADOR</th>
+		<th>&nbsp;</th>
+	</thead>
+	<tbody>
+	<% @administradores.to_a.each do |admin| %>
+		<tr>
+			<td><%= admin[1] %></td>
+			<td>
+				<%= link_to "<i class='icon-edit icon-white'></i> Editar".html_safe, {:action => :edit, :id => admin[0]}, {:class => 'btn btn-info'} %>
+				<%= link_to "<i class='icon-remove icon-white'></i> Excluir".html_safe, {:action => :delete, :id => admin[0]}, {:method => :post, :confirm => 'Tens certeza?', :class => 'btn btn-danger'} %>
+			</td>
+		</tr>	
+	<% end %>
+	</tbody>
+</table>
