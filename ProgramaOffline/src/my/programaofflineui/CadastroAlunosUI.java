@@ -445,6 +445,7 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
                 TelaPrincipal tela = new TelaPrincipal();
                 tela.setVisible(true);
                 tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
+                
             }
 
     }//GEN-LAST:event_jButton1MouseClicked
