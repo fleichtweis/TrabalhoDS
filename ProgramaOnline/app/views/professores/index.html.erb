@@ -1,0 +1,30 @@
+<div class="span12 pull-right">
+	<ul class="breadcrumb">
+		<li class="active">Professores<span class="divider">&raquo;</span></li>
+		<li class="active">Listagem</li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div class="span12 pull-right"><%= link_to "<i class='icon-plus icon-white'></i> Adicionar".html_safe, {:action => :new}, {:class => 'btn btn-success'} %></div>
+<div class="clear"></div>
+<table class="table table-hover">
+	<thead>
+		<th>NOME</th>
+		<th>CPF</th>
+		<th>INSITUIÇÃO</th>
+		<th>&nbsp;</th>
+	</thead>
+	<tbody>
+	<% @cidades.to_a.each do |cidade| %>
+		<tr>
+			<td><%= cidade[1] %></td>
+			<td><%= cidade[0] %></td>
+			<td><%= cidade[0] %></td>
+			<td>
+				<%= link_to "<i class='icon-edit icon-white'></i> Editar".html_safe, {:action => :edit, :id => cidade[0]}, {:class => 'btn btn-info'} %>
+				<%= link_to "<i class='icon-remove icon-white'></i> Excluir".html_safe, {:action => :delete, :id => cidade[0]}, {:method => :post, :confirm => 'Tens certeza?', :class => 'btn btn-danger'} %>
+			</td>
+		</tr>	
+	<% end %>
+	</tbody>
+</table>

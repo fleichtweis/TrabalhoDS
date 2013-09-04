@@ -1,15 +1,36 @@
-<h1>CADASTRO</h1>
-<%= form_tag :action => 'create' do %>
+<div class="span12 pull-right">
+	<ul class="breadcrumb">
+		<li class="active">Professores<span class="divider">&raquo;</span></li>
+		<li class="active">Cadastrar</li>
+	</ul>
+</div>
 
-	<p><label for="cpf">CPF</label>:
-	<%= text_field :professor, :cpf %></p>
-
-	<p><label for="cpf">NOME</label>:
-	<%= text_field :professor, :nome %></p>
-
-	<p><label for="cpf">SENHA</label>:
-	<%= password_field :senha, :cpf %></p>
-
-	<%= submit_tag "CADASTRAR" %>
-
-<% end %>
+<div class="span12 pull-right">
+	<%= form_tag({:action => 'create'}, {:class => 'form-horizontal'}) do %>
+		<fieldset>
+			<legend>CADASTRAR PROFESSOR</legend>
+			<div class="control-group">
+				<label class="control-label" for="professor_cpf">CPF</label>
+				<div class="controls">
+					<%= text_field :professor, :cpf, {:placeholder => 'cpf'} %></p>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="professor_nome">NOME</label>
+				<div class="controls">
+					<%= text_field :professor, :nome, {:placeholder => 'nome'} %></p>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="professor_senha">SENHA</label>
+				<div class="controls">
+					<%= text_field :professor, :senha, {:placeholder => 'senha', :type => :password} %></p>
+				</div>
+			</div>
+			<div class="options btn-group">
+				<%= button_tag(type: 'submit', class: "btn btn-primary") do %><i class="icon-check icon-white"></i> SALVAR<% end %>
+				<%= link_to "<i class='icon-remove'></i> CANCELAR".html_safe, {:action => :index}, :class => 'btn' %>
+			</div>
+		</fieldset>
+	<% end %>
+</div>
