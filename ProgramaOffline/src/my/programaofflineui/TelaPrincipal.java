@@ -146,6 +146,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void bttCadastroAlunoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttCadastroAlunoMouseClicked
         if(evt.getSource() == bttCadastroAluno){
+            dispose();
             CadastroAlunosUI aluno = new CadastroAlunosUI();
             aluno.setVisible(true);
             aluno.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
