@@ -18,7 +18,7 @@ class AdministradoresController < ApplicationController
 			params[:administrador].each do |param|
 				fields.push(param.first)
 				if param.first == 'cpf'
-					values.push(ActiveRecord::Base.connection.quote(param.last.gsub(/[^0-9]/, ''))
+					values.push(ActiveRecord::Base.connection.quote(param.last.gsub(/[^0-9]/, '')))
 				else
 					values.push(ActiveRecord::Base.connection.quote(param.last))
 				end
