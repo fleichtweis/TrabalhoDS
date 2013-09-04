@@ -9,7 +9,7 @@ class ProfessoresController < ApplicationController
 
 	def new
 		@instituicoes = ActiveRecord::Base.connection.execute("SELECT * FROM instituicoes INNER JOIN cidades ON instituicoes.cidade_id = cidades.id INNER JOIN estados on cidades.estados_id = estados.id")
-		@instituicoes = @insituicoes.to_a.collect { |i| ["#{c[4]} &raquo; #{c[1]}".html_safe, i[0]]}
+		@instituicoes = @instituicoes.to_a.collect { |i| ["#{i[4]} &raquo; #{i[1]}".html_safe, i[0]]}
 	end
 
 	def create
