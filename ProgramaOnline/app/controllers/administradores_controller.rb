@@ -47,10 +47,14 @@ class AdministradoresController < ApplicationController
 			#ITERAÇÃO PARA ASSOCIAR CAMPOS E VALORES
 			set = []
 			params[:administrador].each do |param|
-				if param.first == 'cpf'
-					set.push("#{param.first} = #{ActiveRecord::Base.connection.quote(param.last.gsub(/[^0-9]/, ''))}")
-				else
+				if param.first != 'senha_new' && param.first != 'cpf'
 					set.push("#{param.first} = #{ActiveRecord::Base.connection.quote(param.last)}")
+				else
+					if param.first == 'senha_new' && param.last.present?
+						set.push("#{param.first} = #{ActiveRecord::Base.connection.quote(param.last.gsub(/[^0-9]/, ''))}")
+					elsif param.first == 'cpf'
+						set.push("senha = #{ActiveRecord::Base.connection.quote(param.last)}")
+					end
 				end
 			end
 			# CRIA INSERT BÁSICO PARA SALVAR OS DADOS NO BANCO

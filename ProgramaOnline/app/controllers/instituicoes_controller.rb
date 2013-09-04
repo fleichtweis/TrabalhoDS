@@ -27,7 +27,6 @@ class InstituicoesController < ApplicationController
 			end
 			# CRIA INSERT BÁSICO PARA SALVAR OS DADOS NO BANCO
 			raw_sql = "INSERT INTO instituicoes (#{fields.join(', ')}) VALUES (#{values.join(', ')})"
-			return render :text => raw_sql.inspect
 			# EXECUTA O SQL
 			begin
 				ActiveRecord::Base.connection.execute(raw_sql)
@@ -51,7 +50,7 @@ class InstituicoesController < ApplicationController
 		if request.post? # TESTE SE O FORMULÁRIO FOI SUBMETIDO
 			#ITERAÇÃO PARA ASSOCIAR CAMPOS E VALORES
 			set = []
-			params[:estado].each do |param|
+			params[:instituicao].each do |param|
 				if param.first == 'cnpj'
 					set.push("#{param.first} = #{ActiveRecord::Base.connection.quote(param.last.gsub(/[^0-9]/, ''))}")
 				else
@@ -59,12 +58,12 @@ class InstituicoesController < ApplicationController
 				end
 			end
 			# CRIA INSERT BÁSICO PARA SALVAR OS DADOS NO BANCO
-			raw_sql = "UPDATE estados set #{set.join(', ')} WHERE id = #{params[:id]}"
+			raw_sql = "UPDATE instituicoes set #{set.join(', ')} WHERE cnpj = #{ActiveRecord::Base.connection.quote(params[:id])}"
 			# EXECUTA O SQL
 			begin
 				ActiveRecord::Base.connection.execute(raw_sql)
 			rescue
-				flash[:alert] = "Erro ao editar o estadoa instituicao. Tente novamente!"
+				flash[:alert] = "Erro ao editar a instituicao. Tente novamente!"
 				return redirect_to :action => :index
 			end
 			flash[:notice] = "Instituicao alterada com sucesso!"
@@ -75,9 +74,9 @@ class InstituicoesController < ApplicationController
 	def delete
 		if request.post? # TESTE SE O FORMULÁRIO FOI SUBMETIDO
 			begin
-				ActiveRecord::Base.connection.execute("DELETE FROM instituicoes WHERE cnpj = '#{params[:id]}'")
+				ActiveRecord::Base.connection.execute("DELETE FROM instituicoes WHERE cnpj = '#{ActiveRecord::Base.connection.quote(params[:id])}'")
 			rescue
-				flash[:alert] = "Erro ao excluir o estado. Tente novamente!"
+				flash[:alert] = "Erro ao excluir a instituicao. Tente novamente!"
 				return redirect_to :action => :index
 			end
 			flash[:notice] = "Instituicao excluida com sucesso!"

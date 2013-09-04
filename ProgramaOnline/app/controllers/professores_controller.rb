@@ -3,13 +3,14 @@ class ProfessoresController < ApplicationController
 	layout 'bootstrap'
 
 	def index
-		@professores = ActiveRecord::Base.connection.execute("SELECT * FROM professores INNER JOIN instituicoes_has_professores ON professores.cpf = instituicoes_has_professores.professores_cpf JOIN instituicoes ON instituicoes_has_professores.instituicoes_cnpj = instituicoes.cnpj");
+		@professores = ActiveRecord::Base.connection.execute("SELECT * FROM professores INNER JOIN instituicoes ON professores.instituicoes_cnpj = instituicoes.cnpj");
 		@professores = @professores.to_a
 	end
 
 	def new
 		@instituicoes = ActiveRecord::Base.connection.execute("SELECT * FROM instituicoes INNER JOIN cidades ON instituicoes.cidade_id = cidades.id INNER JOIN estados on cidades.estados_id = estados.id")
-		@instituicoes = @instituicoes.to_a.collect { |i| ["#{i[4]} &raquo; #{i[1]}".html_safe, i[0]]}
+		#return render :text => @instituicoes.to_a.inspect
+		@instituicoes = @instituicoes.to_a.collect { |i| ["#{i[1]} - #{i[6]} - #{i[10]}".html_safe, i[0].gsub(/[^0-9]/, '')]}
 	end
 
 	def create
@@ -19,10 +20,15 @@ class ProfessoresController < ApplicationController
 			values = []
 			params[:professor].each do |param|
 				fields.push(param.first)
-				values.push(ActiveRecord::Base.connection.quote(param.last))
+				if param.first == 'cpf'
+					values.push(ActiveRecord::Base.connection.quote(param.last.gsub(/[^0-9]/, '')))
+				else			
+					values.push(ActiveRecord::Base.connection.quote(param.last))
+				end
 			end
 			# CRIA INSERT BÁSICO PARA SALVAR OS DADOS NO BANCO
 			raw_sql = "INSERT INTO professores (#{fields.join(', ')}) VALUES (#{values.join(', ')})"
+			return render :text => raw_sql.inspect
 			# EXECUTA O SQL
 			begin
 				ActiveRecord::Base.connection.execute(raw_sql)
@@ -38,7 +44,7 @@ class ProfessoresController < ApplicationController
 	def edit
 		@instituicoes = ActiveRecord::Base.connection.execute("SELECT * FROM instituicoes");
 		@instituicoes = @insituicoes.to_a
-		@professor = ActiveRecord::Base.connection.execute("SELECT * FROM professores where id = #{params[:id]}");
+		@professor = ActiveRecord::Base.connection.execute("SELECT * FROM professores where cpf = #{ActiveRecord::Base.connection.quote(params[:id])}");
 	end
 
 	def update
@@ -46,10 +52,18 @@ class ProfessoresController < ApplicationController
 			#ITERAÇÃO PARA ASSOCIAR CAMPOS E VALORES
 			set = []
 			params[:professor].each do |param|
-				set.push("#{param.first} = #{ActiveRecord::Base.connection.quote(param.last)}")
+				if param.first != 'senha_new' && param.first != 'cpf'
+					set.push("#{param.first} = #{ActiveRecord::Base.connection.quote(param.last)}")
+				else
+					if param.first == 'senha_new' && param.last.present?
+						set.push("senha = #{ActiveRecord::Base.connection.quote(param.last)}")
+					elsif param.first == 'cpf'
+						set.push("#{param.first} = #{ActiveRecord::Base.connection.quote(param.last.gsub(/[^0-9]/, ''))}")
+					end
+				end
 			end
 			# CRIA INSERT BÁSICO PARA SALVAR OS DADOS NO BANCO
-			raw_sql = "UPDATE professores set #{set.join(', ')} WHERE id = #{params[:id]}"
+			raw_sql = "UPDATE professores set #{set.join(', ')} WHERE cpf = #{ActiveRecord::Base.connection.quote(params[:id])}"
 			# EXECUTA O SQL
 			begin
 				ActiveRecord::Base.connection.execute(raw_sql)
@@ -65,7 +79,7 @@ class ProfessoresController < ApplicationController
 	def delete
 		if request.post? # TESTE SE O FORMULÁRIO FOI SUBMETIDO
 			begin
-				ActiveRecord::Base.connection.execute("DELETE FROM professores WHERE id = #{params[:id]}")
+				ActiveRecord::Base.connection.execute("DELETE FROM professores WHERE cpf = #{ActiveRecord::Base.connection.quote(params[:id])}")
 			rescue
 				flash[:alert] = "Erro ao excluir professor. Tente novamente!"
 				return redirect_to :action => :index

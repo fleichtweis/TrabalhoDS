@@ -11,21 +11,21 @@
 		<fieldset>
 			<legend>EDITAR PROFESSOR</legend>
 			<div class="control-group">
-				<label class="control-label" for="cidade_nome">CPF</label>
+				<label class="control-label" for="professor_cpf">CPF</label>
 				<div class="controls">
-					<%= text_field :professor, :cpf, {:placeholder => 'cpf', :value => @professor.first[0]} %></p>
+					<%= text_field :professor, :cpf, {:placeholder => 'cpf', :value => "#{@professor.first[0][0..2]}.#{@professor.first[0][3..5]}.#{@professor.first[0][6..8]}-#{@professor.first[0][9..10]}"} %></p>
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="cidade_nome">NOME</label>
+				<label class="control-label" for="professor_nome">NOME</label>
 				<div class="controls">
 					<%= text_field :professor, :nome, {:placeholder => 'nome', :value => @professor.first[1]} %></p>
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="cidade_nome">SENHA</label>
+				<label class="control-label" for="professor_senha_new">NOVA SENHA</label>
 				<div class="controls">
-					<%= text_field :professor, :senha, {:placeholder => 'senha', :value => @professor.first[2], :type => :password} %></p>
+					<%= text_field :professor, :senha_new, {:placeholder => 'nova senha', :value => '', :type => :password} %></p>
 				</div>
 			</div>
 			<div class="options btn-group">

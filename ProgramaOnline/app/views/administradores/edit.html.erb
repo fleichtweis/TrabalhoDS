@@ -13,7 +13,7 @@
 			<div class="control-group">
 				<label class="control-label" for="administrador_cpf">CPF</label>
 				<div class="controls">
-					<%= text_field :administrador, :cpf, {:placeholder => 'cpf', :value => @administrador.first[0]} %>
+					<%= text_field :administrador, :cpf, {:placeholder => 'cpf', :value => "#{@administrador.first[0][0..2]}.#{@administrador.first[0][3..5]}.#{@administrador.first[0][6..8]}-#{@administrador.first[0][9..10]}"} %>
 				</div>
 			</div>
 			<div class="control-group">
@@ -23,15 +23,15 @@
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="administrador_nome">E-MAIL</label>
+				<label class="control-label" for="administrador_email">E-MAIL</label>
 				<div class="controls">
 					<%= text_field :administrador, :email, {:placeholder => 'e-mail', :value => @administrador.first[2]} %>
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="administrador_nome">SENHA</label>
+				<label class="control-label" for="administrador_senha_new">SENHA</label>
 				<div class="controls">
-					<%= text_field :administrador, :senha, {:placeholder => 'senha', :value => @administrador.first[3], :type => :password} %>
+					<%= text_field :administrador, :senha_new, {:placeholder => 'nova senha', :value => '', :type => :password} %>
 				</div>
 			</div>
 			<div class="options btn-group">

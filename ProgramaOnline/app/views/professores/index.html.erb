@@ -15,14 +15,14 @@
 		<th>&nbsp;</th>
 	</thead>
 	<tbody>
-	<% @cidades.to_a.each do |cidade| %>
+	<% @professores.each do |professor| %>
 		<tr>
-			<td><%= cidade[1] %></td>
-			<td><%= cidade[0] %></td>
-			<td><%= cidade[0] %></td>
+			<td><%= professor[1] %></td>
+			<td><%= "#{professor[0][0..2]}.#{professor[0][3..5]}.#{professor[0][6..8]}-#{professor[0][9..10]}" %></td>
+			<td><%= professor[6] %></td>
 			<td>
-				<%= link_to "<i class='icon-edit icon-white'></i> Editar".html_safe, {:action => :edit, :id => cidade[0]}, {:class => 'btn btn-info'} %>
-				<%= link_to "<i class='icon-remove icon-white'></i> Excluir".html_safe, {:action => :delete, :id => cidade[0]}, {:method => :post, :confirm => 'Tens certeza?', :class => 'btn btn-danger'} %>
+				<%= link_to "<i class='icon-edit icon-white'></i> Editar".html_safe, {:action => :edit, :id => professor[0]}, {:class => 'btn btn-info'} %>
+				<%= link_to "<i class='icon-remove icon-white'></i> Excluir".html_safe, {:action => :delete, :id => professor[0]}, {:method => :post, :confirm => 'Tens certeza?', :class => 'btn btn-danger'} %>
 			</td>
 		</tr>	
 	<% end %>

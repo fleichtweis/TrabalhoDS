@@ -63,6 +63,8 @@ ProgramaOnline::Application.routes.draw do
   get 'professores/cadastro' => 'professores#new'
   get 'professores/:id' => 'professores#edit'
   post 'professores/create' => 'professores#create'
+  post 'professores/update/:id' => 'professores#update'
+  post 'professores/delete/:id' => 'professores#delete'
 
   ## INSTITUIÇÕES ##
   get 'instituicoes' => 'instituicoes#index'
