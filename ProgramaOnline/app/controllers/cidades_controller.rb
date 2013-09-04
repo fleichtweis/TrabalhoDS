@@ -1,5 +1,7 @@
 class CidadesController < ApplicationController
 
+	before_filter :authenticate_user
+
 	layout 'bootstrap'
 	
 	def index
@@ -77,6 +79,5 @@ class CidadesController < ApplicationController
 		end
 		redirect_to :action => :index
 	end
-	
 
 end

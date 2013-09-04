@@ -1,4 +1,8 @@
 ProgramaOnline::Application.routes.draw do
+  #get "sessions/login,"
+  #get "sessions/home,"
+  #get "sessions/profile,"
+  #get "sessions/setting"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -89,5 +93,17 @@ ProgramaOnline::Application.routes.draw do
   post 'estados/create' => 'estados#create'
   post 'estados/update/:id' => 'estados#update'
   post 'estados/delete/:id' => 'estados#delete'
+
+  ## ADMINISTRADORES ##
+  get 'administradores' => 'administradores#index'
+  get 'administradores/novo' => 'administradores#new'
+  get 'administradores/:id' => 'administradores#edit'
+  post 'administradores/create' => 'administradores#create'
+  post 'administradores/update/:id' => 'administradores#update'
+  post 'administradores/delete/:id' => 'administradores#delete'
+
+  ## LOGIN ##
+  get 'login' => 'sessions#login'
+  post 'sessions/login_attempt' => 'sessions#login_attempt'
 
 end

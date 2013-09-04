@@ -1,7 +1,9 @@
 class ProfessoresController < ApplicationController
 
+	layout 'bootstrap'
+
 	def index
-		@professores = ActiveRecord::Base.connection.execute("SELECT * FROM professor JOIN instituicoes_professores ON (professor.id = instituicoes_professores.professores_cpf JOIN instituicoes ON (instituicoes_professores.instituicoes_id = instituicao.id");
+		@professores = ActiveRecord::Base.connection.execute("SELECT * FROM professores INNER JOIN instituicoes_has_professores ON professores.cpf = instituicoes_has_professores.professores_cpf JOIN instituicoes ON instituicoes_has_professores.instituicoes_cnpj = instituicoes.cnpj");
 		@professores = @professores.to_a
 	end
 

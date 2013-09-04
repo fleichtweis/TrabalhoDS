@@ -1,0 +1,37 @@
+<div class="span12 pull-right">
+	<ul class="breadcrumb">
+		<li class="active">Professores<span class="divider">&raquo;</span></li>
+		<li class="active">Editar</li>
+	</ul>
+</div>
+
+
+<div class="span12 pull-right">
+	<%= form_tag({:action => 'update'}, {:class => 'form-horizontal'}) do %>
+		<fieldset>
+			<legend>EDITAR PROFESSOR</legend>
+			<div class="control-group">
+				<label class="control-label" for="cidade_nome">CPF</label>
+				<div class="controls">
+					<%= text_field :professor, :cpf, {:placeholder => 'cpf', :value => @professor.first[0]} %></p>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="cidade_nome">NOME</label>
+				<div class="controls">
+					<%= text_field :professor, :nome, {:placeholder => 'nome', :value => @professor.first[1]} %></p>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="cidade_nome">SENHA</label>
+				<div class="controls">
+					<%= text_field :professor, :senha, {:placeholder => 'senha', :value => @professor.first[2], :type => :password} %></p>
+				</div>
+			</div>
+			<div class="options btn-group">
+				<%= button_tag(type: 'submit', class: "btn btn-primary") do %><i class="icon-check icon-white"></i> SALVAR<% end %>
+				<%= link_to "<i class='icon-remove'></i> CANCELAR".html_safe, {:action => :index}, :class => 'btn' %>
+			</div>
+		</fieldset>
+	<% end %>
+</div>
