@@ -375,9 +375,11 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
 
                 
                 JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!");
+                
                 DefaultTableModel modeloTabela = (DefaultTableModel)jTable1.getModel();  
                 modeloTabela.addRow(new String[ modeloTabela.getColumnCount() ]);
-                                
+
+                
                 int x = jTable1.getRowCount()-2;  
                 jTable1.setValueAt(x,x ,0);  
                 jTable1.setValueAt(txtNome.getText(),x, 1);
