@@ -22,6 +22,12 @@
 				</div>
 			</div>
 			<div class="control-group">
+				<label class="control-label" for="instituicao_cnpj">INSTITUIÇÃO</label>
+				<div class="controls">
+					<%= select :professor, :instituicao_cnpj, @instituicoes %>
+				</div>
+			</div>
+			<div class="control-group">
 				<label class="control-label" for="professor_senha">SENHA</label>
 				<div class="controls">
 					<%= text_field :professor, :senha, {:placeholder => 'senha', :type => :password} %></p>

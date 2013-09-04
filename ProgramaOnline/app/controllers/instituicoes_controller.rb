@@ -19,7 +19,7 @@ class InstituicoesController < ApplicationController
 			values = []
 			params[:instituicao].each do |param|
 				fields.push(param.first)
-				if param.first == 'cnpj' || param.first == 'telefone'
+				if param.first == 'cnpj'
 					values.push(ActiveRecord::Base.connection.quote(param.last.gsub(/[^0-9]/, '')))
 				else
 					values.push(ActiveRecord::Base.connection.quote(param.last))
@@ -27,6 +27,7 @@ class InstituicoesController < ApplicationController
 			end
 			# CRIA INSERT BÁSICO PARA SALVAR OS DADOS NO BANCO
 			raw_sql = "INSERT INTO instituicoes (#{fields.join(', ')}) VALUES (#{values.join(', ')})"
+			return render :text => raw_sql.inspect
 			# EXECUTA O SQL
 			begin
 				ActiveRecord::Base.connection.execute(raw_sql)
@@ -51,7 +52,11 @@ class InstituicoesController < ApplicationController
 			#ITERAÇÃO PARA ASSOCIAR CAMPOS E VALORES
 			set = []
 			params[:estado].each do |param|
-				set.push("#{param.first} = #{ActiveRecord::Base.connection.quote(param.last)}")
+				if param.first == 'cnpj'
+					set.push("#{param.first} = #{ActiveRecord::Base.connection.quote(param.last.gsub(/[^0-9]/, ''))}")
+				else
+					set.push("#{param.first} = #{ActiveRecord::Base.connection.quote(param.last)}")
+				end
 			end
 			# CRIA INSERT BÁSICO PARA SALVAR OS DADOS NO BANCO
 			raw_sql = "UPDATE estados set #{set.join(', ')} WHERE id = #{params[:id]}"
