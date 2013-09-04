@@ -159,6 +159,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void bttCadastroTurmaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttCadastroTurmaMouseClicked
         if(evt.getSource() == bttCadastroTurma){
+            dispose();
             CadastroTurma turma = new CadastroTurma();
             turma.setVisible(true);
             turma.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
@@ -171,10 +172,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void bttCadastroTesteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttCadastroTesteMouseClicked
         if(evt.getSource() == bttCadastroTeste){
+            dispose();
             CadastroTestes teste = new CadastroTestes();
             teste.setVisible(true);
             teste.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
-            
         }
     }//GEN-LAST:event_bttCadastroTesteMouseClicked
 

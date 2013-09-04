@@ -260,8 +260,7 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"0", "-", null},
-                {null, null, null}
+
             },
             new String [] {
                 "Id", "Nome", "Turma"
@@ -411,12 +410,7 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!");
                 
                 DefaultTableModel modeloTabela = (DefaultTableModel)jTable1.getModel();  
-                modeloTabela.addRow(new String[ modeloTabela.getColumnCount() ]);
-
-                
-                int x = jTable1.getRowCount()-2;  
-                jTable1.setValueAt(x,x ,0);  
-                jTable1.setValueAt(txtNome.getText(),x, 1);
+                modeloTabela.addRow( new String [] {"", ""+txtNome.getText(),""} );
                 
                 txtNome.setText(null);
                 txtNomeMae.setText(null);
@@ -445,7 +439,6 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
                 TelaPrincipal tela = new TelaPrincipal();
                 tela.setVisible(true);
                 tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
-                
             }
 
     }//GEN-LAST:event_jButton1MouseClicked
