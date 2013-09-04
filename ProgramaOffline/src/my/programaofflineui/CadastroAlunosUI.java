@@ -16,6 +16,7 @@ import java.util.List;
 import javax.swing.JCheckBox;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -31,7 +32,7 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
     }
 
     public static class Aluno {
-        private int id;
+        private int id=0;
 	private String nome;
         private String dtNascimento;
         private String rg;
@@ -39,6 +40,10 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
         private String sexo;
 	private String nomePai;
         private String nomeMae;
+        
+        public void setId(int id){
+            this.id+=id;
+        }
         public void setNome(String nome){
             this.nome=nome;
         }
@@ -252,15 +257,21 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
+                {"0", "-", null},
                 {null, null, null}
             },
             new String [] {
                 "Id", "Nome", "Turma"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, jScrollPane1, org.jdesktop.beansbinding.ELProperty.create("TRUE"), jTable1, org.jdesktop.beansbinding.BeanProperty.create("autoscrolls"));
         bindingGroup.addBinding(binding);
@@ -327,46 +338,61 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNomeMaeActionPerformed
 
     private void bttCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttCadastrarMouseClicked
-        if(evt.getSource() == bttCadastrar){
-            XStream xstream = new XStream();
+        String nomeArquivo = "Alunos.xml";
+        File arq = new File(nomeArquivo);
+        //if(arq.exists()){
             
-            List contatos = new ArrayList(1);
-            
-            Aluno aluno = new Aluno();
-            
-            //IMPORTAR E CONTINUAR DO XML
-            
-            aluno.setNome(txtNome.getText());
-            //aluno.setDtNascimento(txtDtNascimento.);
-            aluno.setRg(txtRg.getText());
-            aluno.setCpf(txtCpf.getText());
-            aluno.setNomePai(txtNomePai.getText());
-            aluno.setNomeMae(txtNomeMae.getText());
-            aluno.setSexo(cmbSexo.getSelectedItem());
-            
-            contatos.add(aluno);
-            String contatosEmXML = xstream.toXML(contatos);
-            System.out.println("\nContatos em XML:");  
-            System.out.println(contatosEmXML);  
-            
-            FileOutputStream gravar;
-            try {
-                gravar = new FileOutputStream("alunos.xml");
-                gravar.write(xstream.toXML(contatos).getBytes());
-                gravar.close();
-            } catch (IOException ex) {
-                ex.printStackTrace();
+        //}else{
+            if(evt.getSource() == bttCadastrar){
+                XStream xstream = new XStream();
+                Aluno aluno = new Aluno();
+                List contatos = new ArrayList(1);
+
+                //IMPORTAR E CONTINUAR DO XML
+                aluno.setId(1);
+                aluno.setNome(txtNome.getText());
+                //aluno.setDtNascimento(txtDtNascimento.getCalendar());
+                aluno.setRg(txtRg.getText());
+                aluno.setCpf(txtCpf.getText());
+                aluno.setNomePai(txtNomePai.getText());
+                aluno.setNomeMae(txtNomeMae.getText());
+                aluno.setSexo(cmbSexo.getSelectedItem());
+
+                contatos.add(aluno);
+                String contatosEmXML = xstream.toXML(contatos);
+                System.out.println("\nContatos em XML:");  
+                System.out.println(contatosEmXML);  
+
+                FileOutputStream gravar;
+                try {
+                    gravar = new FileOutputStream(nomeArquivo);
+                    gravar.write(xstream.toXML(contatos).getBytes());
+                    gravar.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                
+
+                
+                JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!");
+                
+                DefaultTableModel modeloTabela = (DefaultTableModel)jTable1.getModel();  
+                modeloTabela.addRow(new String[ modeloTabela.getColumnCount() ]);
+
+                
+                int x = jTable1.getRowCount()-2;  
+                jTable1.setValueAt(x,x ,0);  
+                jTable1.setValueAt(txtNome.getText(),x, 1);
+                
+                txtNome.setText(null);
+                txtNomeMae.setText(null);
+                txtNomePai.setText(null);
+                txtRg.setText(null);
+                txtCpf.setText(null);
+                cmbSexo.setSelectedItem(null);
             }
-            JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!");
-            txtNome.setText(null);
-            txtNomeMae.setText(null);
-            txtNomePai.setText(null);
-            txtRg.setText(null);
-            txtCpf.setText(null);
-            cmbSexo.setSelectedItem(null);
-            txtDtNascimento.cleanup();
-            
-        }
+        //}
+        evt.setSource(null);
     }//GEN-LAST:event_bttCadastrarMouseClicked
 
     private void bttCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttCadastrarActionPerformed
