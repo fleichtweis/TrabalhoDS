@@ -478,10 +478,15 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Cadastrar Teste");
+        jButton2.setText("Cadastrar Teste >>");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -564,34 +569,37 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
         String nomeArquivo = "Alunos.xml";
         String idXML,nomeXML,cpfXML,rgXML,nomePaiXML,nomeMaeXML,sexoXML;
         File arq = new File(nomeArquivo);
-        
+        String idTurma;
         if(arq.exists()){
             try{
                 FileReader reader = new FileReader(nomeArquivo);
                 //leitor do arquivo texto (ponteiro)
                 BufferedReader leitor = new BufferedReader(reader);
                 mostra+="id - nome - idade - rg - cpf - sexo - nomePai - nomeMae\n";
-                leitor.readLine(); //list
                 while(true){
-                    leitor.readLine(); //<my.programaofflineui.CadastroAlunosUI_-Aluno>
-                    idXML = leitor.readLine();
-                    nomeXML = leitor.readLine();
-                    rgXML = leitor.readLine();
-                    cpfXML = leitor.readLine();
-                    sexoXML = leitor.readLine();
-                    nomePaiXML = leitor.readLine();
-                    nomeMaeXML = leitor.readLine();
-                    idXML=idXML.substring(idXML.indexOf(">")+1,idXML.indexOf("/")-1);
-                    nomeXML=nomeXML.substring(nomeXML.indexOf(">")+1,nomeXML.indexOf("/")-1);
-                    rgXML=rgXML.substring(rgXML.indexOf(">")+1,rgXML.indexOf("/")-1);
-                    cpfXML=cpfXML.substring(cpfXML.indexOf(">")+1,cpfXML.indexOf("/")-1);
-                    sexoXML=sexoXML.substring(sexoXML.indexOf(">")+1,sexoXML.indexOf("/")-1);
-                    nomePaiXML=nomePaiXML.substring(nomePaiXML.indexOf(">")+1,nomePaiXML.indexOf("/")-1);
-                    nomeMaeXML=nomeMaeXML.substring(nomeMaeXML.indexOf(">")+1,nomeMaeXML.indexOf("/")-1);
-                    leitor.readLine();
-                    
-                    DefaultTableModel modeloTabelaXML = (DefaultTableModel)jTable1.getModel();  
-                    modeloTabelaXML.addRow( new String [] {"", ""+nomeXML,""} );
+                    idTurma=leitor.readLine();
+                    leitor.readLine(); //alunosTurmas
+                    while(true){
+                        leitor.readLine(); //<my.programaofflineui.CadastroAlunosUI_-Aluno>
+                        idXML = leitor.readLine();
+                        nomeXML = leitor.readLine();
+                        rgXML = leitor.readLine();
+                        cpfXML = leitor.readLine();
+                        sexoXML = leitor.readLine();
+                        nomePaiXML = leitor.readLine();
+                        nomeMaeXML = leitor.readLine();
+                        idXML=idXML.substring(idXML.indexOf(">")+1,idXML.indexOf("/")-1);
+                        nomeXML=nomeXML.substring(nomeXML.indexOf(">")+1,nomeXML.indexOf("/")-1);
+                        rgXML=rgXML.substring(rgXML.indexOf(">")+1,rgXML.indexOf("/")-1);
+                        cpfXML=cpfXML.substring(cpfXML.indexOf(">")+1,cpfXML.indexOf("/")-1);
+                        sexoXML=sexoXML.substring(sexoXML.indexOf(">")+1,sexoXML.indexOf("/")-1);
+                        nomePaiXML=nomePaiXML.substring(nomePaiXML.indexOf(">")+1,nomePaiXML.indexOf("/")-1);
+                        nomeMaeXML=nomeMaeXML.substring(nomeMaeXML.indexOf(">")+1,nomeMaeXML.indexOf("/")-1);
+                        leitor.readLine();
+
+                        DefaultTableModel modeloTabelaXML = (DefaultTableModel)jTable1.getModel();  
+                        modeloTabelaXML.addRow( new String [] {"", ""+nomeXML,""} );
+                    }
                 }
             }catch(Exception erro){}
         }    
@@ -625,7 +633,7 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
             Aluno aluno = new Aluno();
 
             //ALUNO
-            aluno.setId(1);
+            aluno.setId(tamanhoAluno);
             aluno.setNome(txtNome.getText());
             aluno.setRg(txtRg.getText());
             aluno.setCpf(txtCpf.getText());
@@ -664,7 +672,8 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
             txtRg.setText(null);
             txtCpf.setText(null);
             cmbSexo.setSelectedItem(null);
-        evt.setSource(null);
+            evt.setSource(null);
+            tamanhoAluno++;
         }
     }//GEN-LAST:event_bttCadastrarMouseClicked
 
@@ -690,11 +699,15 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
             if(evt.getSource() == jButton2){
                 dispose();
-                CadastroTestes tela = new CadastroTestes();
+                CadastroTestes tela = new CadastroTestes(cpfProf,idEntrada);    
                 tela.setVisible(true);
                 tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             }
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

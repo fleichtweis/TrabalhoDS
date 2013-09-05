@@ -361,7 +361,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void bttCadastroTurmaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttCadastroTurmaMouseClicked
         if(evt.getSource() == bttCadastroTurma){
             dispose();
-            CadastroTurma turma = new CadastroTurma();
+            CadastroTurma turma = new CadastroTurma(this.cpfProf);
             turma.setVisible(true);
             turma.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
         }

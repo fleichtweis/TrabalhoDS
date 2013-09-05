@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<list>
+  <Lista>
+    <turmas class="list">
+      <turma>
+        <idTurma>1</idTurma>
+        <alunosTurmas class="list">
+          <aluno>
+            <id>1</id>
+            <nome>Mohammad Basciri Nimer Hammad</nome>
+            <rg>64454</rg>
+            <cpf>545454</cpf>
+            <sexo>Masculino</sexo>
+            <nomePai>Cuervo</nomePai>
+            <nomeMae>Jose</nomeMae>
+          </aluno>
+        </alunosTurmas>
+      </turma>
+    </turmas>
+    <testes class="list">
+      <teste>
+        <idAluno>0</idAluno>
+        <abdominal>90</abdominal>
+        <imc>80</imc>
+      </teste>
+    </testes>
+  </Lista>
+</list>

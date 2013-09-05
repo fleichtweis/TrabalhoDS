@@ -20,13 +20,15 @@ import javax.swing.JOptionPane;
 public class CadastroTestes extends javax.swing.JFrame {
 
     private String cpfProf;
+    private int idAlunoTeste;
     public CadastroTestes() {
         initComponents();
     }
     
-    public CadastroTestes(String cpfProfessor) {
+    public CadastroTestes(String cpfProfessor,int idAluno) {
         initComponents();
         this.cpfProf=cpfProfessor;
+        this.idAlunoTeste=idAluno;
     }
     
     public static class listaXML{
@@ -286,6 +288,7 @@ public class CadastroTestes extends javax.swing.JFrame {
         bttCadastrar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -715,6 +718,13 @@ public class CadastroTestes extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Turma>>");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -724,7 +734,9 @@ public class CadastroTestes extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
@@ -737,7 +749,9 @@ public class CadastroTestes extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(m_9_s, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -857,7 +871,8 @@ public class CadastroTestes extends javax.swing.JFrame {
             XStream xstream = new XStream();
             List testes = new ArrayList(1);
             Testes teste = new Testes();
-
+            
+            teste.setIdAluno(idAlunoTeste);
             teste.setAbdominal(txtAbdominal.getText());
             teste.setImc(txtIMC.getText());
             teste.setNoveMin(txtNove_min_s.getText());
@@ -870,8 +885,9 @@ public class CadastroTestes extends javax.swing.JFrame {
             teste.setQuadrado(txtQuadrado.getText());
             teste.setSalto_dist(txtSalto_dist.getText());
             teste.setSeisMinDm(txtSeis_min_dm.getText());
-            
             testes.add(teste);
+            
+            
             //CRIAR ARQUIVO
             JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!");
         }
@@ -885,6 +901,15 @@ public class CadastroTestes extends javax.swing.JFrame {
                 tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
             }
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        if(evt.getSource()==jButton2){
+            dispose();
+            CadastroTurma tela = new CadastroTurma(this.cpfProf);
+            tela.setVisible(true);
+            tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        }
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -947,6 +972,7 @@ public class CadastroTestes extends javax.swing.JFrame {
     private javax.swing.JLabel corrida_20m;
     private javax.swing.JLabel imc;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
