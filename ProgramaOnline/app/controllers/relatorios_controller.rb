@@ -1,7 +1,10 @@
-require 'fileutils'
-require 'nokogiri'
-
 class RelatoriosController < ApplicationController
+
+	before_filter :authenticate_user
+
+	require 'fileutils'
+
+	layout 'bootstrap'
 
 	def index
 	end
@@ -10,13 +13,14 @@ class RelatoriosController < ApplicationController
 	end
 
 	def create
-		tmp = params[:relatorio][:my_file].tempfile
-		file = File.join("public", params[:relatorio][:my_file].original_filename)
-		f = File.open(Rails.root + "/" + file)
-		doc = Nokogiri::XML(f)
-		f.close
+		uploaded_io = params[:relatorio][:arquivo]
+  		File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'w') do |file|
+    			file.write(uploaded_io.read)
+  		end
+		file = "#{Rails.root}/public/uploads/#{uploaded_io.original_filename}"
+		hash = Hash.from_xml(file)
+		return render :text => hash.inspect
 	end
-
 	def edit
 	end
 

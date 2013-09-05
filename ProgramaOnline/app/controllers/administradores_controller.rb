@@ -1,5 +1,9 @@
 class AdministradoresController < ApplicationController
 
+	before_filter :authenticate_user
+
+	require 'digest/sha1'
+
 	layout 'bootstrap'
 
 	def index
@@ -17,10 +21,14 @@ class AdministradoresController < ApplicationController
 			values = []
 			params[:administrador].each do |param|
 				fields.push(param.first)
-				if param.first == 'cpf'
-					values.push(ActiveRecord::Base.connection.quote(param.last.gsub(/[^0-9]/, '')))
-				else
+				if param.first != 'senha' && param.first != 'cpf'
 					values.push(ActiveRecord::Base.connection.quote(param.last))
+				else
+					if param.first == 'cpf'
+						values.push(ActiveRecord::Base.connection.quote(param.last.gsub(/[^0-9]/, '')))
+					elsif param.first == 'senha'
+						values.push(ActiveRecord::Base.connection.quote(Digest::SHA1.hexdigest(param.last)))
+					end
 				end
 			end
 			# CRIA INSERT BÁSICO PARA SALVAR OS DADOS NO BANCO
@@ -51,7 +59,7 @@ class AdministradoresController < ApplicationController
 					set.push("#{param.first} = #{ActiveRecord::Base.connection.quote(param.last)}")
 				else
 					if param.first == 'senha_new' && param.last.present?
-						set.push("#{param.first} = #{ActiveRecord::Base.connection.quote(param.last.gsub(/[^0-9]/, ''))}")
+						set.push("#{param.first} = #{ActiveRecord::Base.connection.quote(Digest::SHA1.hexdigest(param.last))}")
 					elsif param.first == 'cpf'
 						set.push("senha = #{ActiveRecord::Base.connection.quote(param.last)}")
 					end

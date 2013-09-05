@@ -1,4 +1,24 @@
-<%= form_for :relatorio, :url => url_for(:controller => :relatorios, :action => :create), :html => {:multipart => true} do |f| %>
-  <%= f.file_field :my_file %>
-  <%= f.submit "ENVIAR" %>
-<% end %>
+<div class="span12 pull-right">
+	<ul class="breadcrumb">
+		<li class="active">Relatórios<span class="divider">&raquo;</span></li>
+		<li class="active">Adicionar</li>
+	</ul>
+</div>
+
+<div class="span12 pull-right">
+	<%= form_tag({:action => 'create'}, {:class => 'form-horizontal', :multipart => true}) do %>
+		<fieldset>
+			<legend>CADASTRAR RELATÓRIO</legend>
+			<div class="control-group">
+				<label class="control-label" for="relatorio_arquivo">RELATORIO</label>
+				<div class="controls">
+					<%= file_field :relatorio, :arquivo %>
+				</div>
+			</div>
+			<div class="options btn-group">
+				<%= button_tag(type: 'submit', class: "btn btn-primary") do %><i class="icon-check icon-white"></i> SALVAR<% end %>
+				<%= link_to "<i class='icon-remove'></i> CANCELAR".html_safe, {:action => :index}, :class => 'btn' %>
+			</div>
+		</fieldset>
+	<% end %>
+</div>

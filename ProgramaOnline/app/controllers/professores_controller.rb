@@ -1,5 +1,9 @@
 class ProfessoresController < ApplicationController
 
+	before_filter :authenticate_user, :except => [:new, :create]
+
+	require 'digest/sha1'
+
 	layout 'bootstrap'
 
 	def index
@@ -20,15 +24,18 @@ class ProfessoresController < ApplicationController
 			values = []
 			params[:professor].each do |param|
 				fields.push(param.first)
-				if param.first == 'cpf'
-					values.push(ActiveRecord::Base.connection.quote(param.last.gsub(/[^0-9]/, '')))
-				else			
+				if param.first != 'cpf' && param.first != 'senha'
 					values.push(ActiveRecord::Base.connection.quote(param.last))
+				else				
+					if param.first == 'cpf'
+						values.push(ActiveRecord::Base.connection.quote(param.last.gsub(/[^0-9]/, '')))
+					elsif param.first == 'senha'			
+						values.push(ActiveRecord::Base.connection.quote(Digest::SHA1.hexdigest(param.last)))
+					end
 				end
 			end
 			# CRIA INSERT BÁSICO PARA SALVAR OS DADOS NO BANCO
 			raw_sql = "INSERT INTO professores (#{fields.join(', ')}) VALUES (#{values.join(', ')})"
-			return render :text => raw_sql.inspect
 			# EXECUTA O SQL
 			begin
 				ActiveRecord::Base.connection.execute(raw_sql)
@@ -56,7 +63,7 @@ class ProfessoresController < ApplicationController
 					set.push("#{param.first} = #{ActiveRecord::Base.connection.quote(param.last)}")
 				else
 					if param.first == 'senha_new' && param.last.present?
-						set.push("senha = #{ActiveRecord::Base.connection.quote(param.last)}")
+						set.push("senha = #{ActiveRecord::Base.connection.quote(Digest::SHA1.hexdigest(param.last))}")
 					elsif param.first == 'cpf'
 						set.push("#{param.first} = #{ActiveRecord::Base.connection.quote(param.last.gsub(/[^0-9]/, ''))}")
 					end
@@ -69,7 +76,11 @@ class ProfessoresController < ApplicationController
 				ActiveRecord::Base.connection.execute(raw_sql)
 			rescue
 				flash[:alert] = "Erro ao editar o professor. Tente novamente!"
-				return redirect_to :action => :index
+				if session[:adm] != 1
+					return redirect_to :controller => :relatorios
+				else
+					return redirect_to :action => :index
+				end
 			end
 			flash[:notice] = "Professor alterado com sucesso!"
 		end

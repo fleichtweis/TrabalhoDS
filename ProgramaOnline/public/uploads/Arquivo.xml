@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<list>
+  <Lista>
+    <turmas class="list">
+      <turma>
+        <idTurma>1</idTurma>
+        <alunosTurmas class="list">
+          <aluno>
+            <id>1</id>
+            <nome>Mohammad Basciri</nome>
+            <rg></rg>
+            <cpf></cpf>
+            <sexo>Masculino</sexo>
+            <nomePai></nomePai>
+            <nomeMae></nomeMae>
+          </aluno>
+          <aluno>
+            <id>1</id>
+            <nome>sasaa</nome>
+            <rg></rg>
+            <cpf></cpf>
+            <sexo>Feminino</sexo>
+            <nomePai></nomePai>
+            <nomeMae></nomeMae>
+          </aluno>
+          <aluno>
+            <id>1</id>
+            <nome>Capiroto</nome>
+            <rg></rg>
+            <cpf></cpf>
+            <sexo>Feminino</sexo>
+            <nomePai></nomePai>
+            <nomeMae></nomeMae>
+          </aluno>
+        </alunosTurmas>
+      </turma>
+      <turma>
+        <idTurma>1</idTurma>
+        <alunosTurmas class="list" reference="../../turma/alunosTurmas"/>
+      </turma>
+      <turma>
+        <idTurma>1</idTurma>
+        <alunosTurmas class="list" reference="../../turma/alunosTurmas"/>
+      </turma>
+    </turmas>
+    <testes class="list">
+      <teste>
+        <idAluno>0</idAluno>
+        <abdominal>90</abdominal>
+        <imc>80</imc>
+      </teste>
+      <teste>
+        <idAluno>0</idAluno>
+        <abdominal>90</abdominal>
+        <imc>80</imc>
+      </teste>
+      <teste>
+        <idAluno>0</idAluno>
+        <abdominal>90</abdominal>
+        <imc>80</imc>
+      </teste>
+    </testes>
+  </Lista>
+  <Lista>
+    <turmas class="list" reference="../../Lista/turmas"/>
+    <testes class="list" reference="../../Lista/testes"/>
+  </Lista>
+  <Lista>
+    <turmas class="list" reference="../../Lista/turmas"/>
+    <testes class="list" reference="../../Lista/testes"/>
+  </Lista>
+</list>

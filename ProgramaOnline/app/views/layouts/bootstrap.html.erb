@@ -30,18 +30,25 @@
 <br><br><br>
 <div class="container-fluid">
 	<div class="row-fluid">
+		<% if @current_user %>
 		<div class="span3">
 			<div class="well sidebar-nav">
 				<ul class="nav nav-list">
-					<li class="nav-header"><h4>Bem-vindo, nome</h4></li>
-					<li><%= link_to "Estados", {:controller => :estados, :action => :index} %></li>
-					<li><%= link_to "Cidades", {:controller => :cidades, :action => :index} %></li>
-					<li><%= link_to "Instituições", {:controller => :instituicoes, :action => :index} %></li>
-					<li><%= link_to "Professores", {:controller => :professores, :action => :index} %></li>
-					<li><%= link_to "Administradores", {:controller => :administradores, :action => :index} %></li>
+					<li class="nav-header"><h4>Bem-vindo,  <%= @current_user[1] %></h4></li>
+					<% if session[:adm] == 1 %>
+						<li><%= link_to "Estados", {:controller => :estados, :action => :index} %></li>
+						<li><%= link_to "Cidades", {:controller => :cidades, :action => :index} %></li>
+						<li><%= link_to "Instituições", {:controller => :instituicoes, :action => :index} %></li>
+						<li><%= link_to "Professores", {:controller => :professores, :action => :index} %></li>
+						<li><%= link_to "Administradores", {:controller => :administradores, :action => :index} %></li>
+					<% else %>
+						<li><%= link_to "Relatórios", {:controller => :relatorios, :action => :index} %></li>
+						<li><%= link_to "Editar perfil", {:controller => :professores, :action => :edit, :id => session[:user_id]} %></li>
+					<% end %>
 				</ul>
 			</div>
 		</div>
+		<% end %>
 		<div class="span9">
 			<% if flash[:alert] %>
 				<div class="clear"></div>

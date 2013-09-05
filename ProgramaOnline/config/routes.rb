@@ -106,6 +106,8 @@ ProgramaOnline::Application.routes.draw do
 
   ## LOGIN ##
   get 'login' => 'sessions#login'
+  get 'home' => 'sessions#home'
+  get 'logout' => 'sessions#logout'
   post 'sessions/login_attempt' => 'sessions#login_attempt'
 
 end

@@ -7,7 +7,9 @@ class ApplicationController < ActionController::Base
 	
 		def authenticate_user
 			if session[:user_id]
-				@current_user = User.find session[:user_id]
+				raw_sql = "SELECT * FROM professores WHERE cpf = " + ActiveRecord::Base.connection.quote(session[:user_id])
+				temp = ActiveRecord::Base.connection.execute(raw_sql)
+				@current_user = temp.to_a.first
 				return true	
 			else
 				redirect_to(:controller => 'sessions', :action => 'login')

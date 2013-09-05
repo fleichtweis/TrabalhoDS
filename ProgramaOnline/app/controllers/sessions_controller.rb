@@ -11,12 +11,21 @@ class SessionsController < ApplicationController
 
 	def login_attempt
 		if request.post? && params[:senha] && params[:cpf]
-			encrypted_password= Digest::SHA1.hexdigest(params[:senha])
-			user = ActiveRecord::Base.connection.execute("SELECT * FROM professores WHERE cpf = " + ActiveRecord::Base.connection.quote(params[:cpf]) + " AND senha = " + ActiveRecord::Base.connection.quote(params[:senha]))
-			user = user.to_a
-			if user
-				session[:user_id] = user[0]
-				flash[:notice] = "Bem-vindo, " + user[1]
+			session[:adm] = 0
+			encrypted_password = Digest::SHA1.hexdigest(params[:senha])
+			if params[:adm]
+				raw_sql = "SELECT * FROM administradores WHERE cpf = " + ActiveRecord::Base.connection.quote(params[:cpf].gsub(/[^0-9]/, '')) + " AND senha = " + ActiveRecord::Base.connection.quote(encrypted_password)
+				user = ActiveRecord::Base.connection.execute(raw_sql)
+				user = user.to_a
+				session[:adm] = 1
+			else
+				raw_sql = "SELECT * FROM professores WHERE cpf = " + ActiveRecord::Base.connection.quote(params[:cpf].gsub(/[^0-9]/, '')) + " AND senha = " + ActiveRecord::Base.connection.quote(encrypted_password)
+				user = ActiveRecord::Base.connection.execute(raw_sql)
+				user = user.to_a
+			end
+			if user.length == 1
+				session[:user_id] = user.first[0]
+				flash[:notice] = "Bem-vindo, " + user.first[1]
 				return redirect_to :action => :home
 			else
 				flash[:alert] = "Usuario invalido!"
@@ -29,6 +38,10 @@ class SessionsController < ApplicationController
 	def logout
 		session[:user_id] = nil
 		redirect_to :action => 'login'
+	end
+
+	def home
+		return redirect_to :controller => :estados, :action => :index
 	end
 
 end
