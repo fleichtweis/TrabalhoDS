@@ -1,5 +1,6 @@
 <%= form_tag({:action => 'login_attempt'}, {:class => 'form-signin'}) do %>
 	<input name="cpf" class="input-block-level" placeholder="CPF" type="text">
         <input name="senha" class="input-block-level" placeholder="SENHA" type="password">
+	<label for="adm"><input name="adm" type="checkbox" id="adm" value="1">logar como administrador</label> 
 	<button class="btn btn-large btn-primary" type="submit">ENTRAR</button>
 <% end %>

@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 			session[:adm] = 0
 			encrypted_password = Digest::SHA1.hexdigest(params[:senha])
 			if params[:adm]
-				raw_sql = "SELECT * FROM administradores WHERE cpf = " + ActiveRecord::Base.connection.quote(params[:cpf].gsub(/[^0-9]/, '')) + " AND senha = " + ActiveRecord::Base.connection.quote(encrypted_password)
+				raw_sql = "SELECT * FROM administradores WHERE cpf = " + params[:cpf].gsub(/[^0-9]/, '') + " AND senha = " + ActiveRecord::Base.connection.quote(encrypted_password)
 				user = ActiveRecord::Base.connection.execute(raw_sql)
 				user = user.to_a
 				session[:adm] = 1

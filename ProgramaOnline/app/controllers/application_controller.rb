@@ -6,7 +6,12 @@ class ApplicationController < ActionController::Base
 	protected
 	
 		def authenticate_user
-			if session[:user_id]
+			if session[:user_id] && session[:adm] == 1
+				raw_sql = "SELECT * FROM administradores WHERE cpf = " + session[:user_id]
+				temp = ActiveRecord::Base.connection.execute(raw_sql)
+				@current_user = temp.to_a.first
+				return true	
+			elsif session[:user_id]
 				raw_sql = "SELECT * FROM professores WHERE cpf = " + ActiveRecord::Base.connection.quote(session[:user_id])
 				temp = ActiveRecord::Base.connection.execute(raw_sql)
 				@current_user = temp.to_a.first
