@@ -565,41 +565,56 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNomeMaeActionPerformed
 
     private void importarXML(){
-        String mostra="";
-        String nomeArquivo = "Alunos.xml";
+        String mostra;
+        String nomeArquivo = "Arquivo.xml"; //Nome do arquivo, pode ser absoluto, ou pastas /dir/teste.xml
         String idXML,nomeXML,cpfXML,rgXML,nomePaiXML,nomeMaeXML,sexoXML;
         File arq = new File(nomeArquivo);
-        String idTurma;
+        
         if(arq.exists()){
-            try{
+            try{ //tentando ler o arquivo
+                //Abrindo arquivo para leitura
                 FileReader reader = new FileReader(nomeArquivo);
                 //leitor do arquivo texto (ponteiro)
                 BufferedReader leitor = new BufferedReader(reader);
-                mostra+="id - nome - idade - rg - cpf - sexo - nomePai - nomeMae\n";
-                while(true){
-                    idTurma=leitor.readLine();
-                    leitor.readLine(); //alunosTurmas
-                    while(true){
-                        leitor.readLine(); //<my.programaofflineui.CadastroAlunosUI_-Aluno>
-                        idXML = leitor.readLine();
-                        nomeXML = leitor.readLine();
-                        rgXML = leitor.readLine();
-                        cpfXML = leitor.readLine();
-                        sexoXML = leitor.readLine();
-                        nomePaiXML = leitor.readLine();
-                        nomeMaeXML = leitor.readLine();
-                        idXML=idXML.substring(idXML.indexOf(">")+1,idXML.indexOf("/")-1);
-                        nomeXML=nomeXML.substring(nomeXML.indexOf(">")+1,nomeXML.indexOf("/")-1);
-                        rgXML=rgXML.substring(rgXML.indexOf(">")+1,rgXML.indexOf("/")-1);
-                        cpfXML=cpfXML.substring(cpfXML.indexOf(">")+1,cpfXML.indexOf("/")-1);
-                        sexoXML=sexoXML.substring(sexoXML.indexOf(">")+1,sexoXML.indexOf("/")-1);
-                        nomePaiXML=nomePaiXML.substring(nomePaiXML.indexOf(">")+1,nomePaiXML.indexOf("/")-1);
-                        nomeMaeXML=nomeMaeXML.substring(nomeMaeXML.indexOf(">")+1,nomeMaeXML.indexOf("/")-1);
-                        leitor.readLine();
 
-                        DefaultTableModel modeloTabelaXML = (DefaultTableModel)jTable1.getModel();  
-                        modeloTabelaXML.addRow( new String [] {"", ""+nomeXML,""} );
+                leitor.readLine(); //<?xml version
+                leitor.readLine(); //<list
+                leitor.readLine(); //<Lista
+                leitor.readLine(); //<turmas class
+                leitor.readLine(); //<turma
+                leitor.readLine(); //<id turma
+                leitor.readLine(); //<alunos turmas class
+                while(true){
+                    mostra = leitor.readLine(); //<aluno>
+                    if (mostra != "<aluno>"){ //Acabou alunos na turma, verifica se tem outra turma.
+                        leitor.readLine(); //</turma>
+                        mostra = leitor.readLine(); //<turma>
+                        if (mostra != "<turma>"){ //Nao existe outra turma, logo nao tem aluno.
+                            break;
+                        }
+                        leitor.readLine(); //<idTurma
+                        leitor.readLine(); //<alunosTurmas class
+                        leitor.readLine(); //<aluno>
                     }
+                    idXML = leitor.readLine(); //<id>01</id>
+                    nomeXML = leitor.readLine();
+                    rgXML = leitor.readLine();
+                    cpfXML = leitor.readLine();
+                    sexoXML = leitor.readLine();
+                    nomePaiXML = leitor.readLine();
+                    nomeMaeXML = leitor.readLine();
+                    idXML=idXML.substring(idXML.indexOf(">")+1,idXML.indexOf("/")-1); //pegando entre as tags
+                    nomeXML=nomeXML.substring(nomeXML.indexOf(">")+1,nomeXML.indexOf("/")-1);
+                    rgXML=rgXML.substring(rgXML.indexOf(">")+1,rgXML.indexOf("/")-1);
+                    cpfXML=cpfXML.substring(cpfXML.indexOf(">")+1,cpfXML.indexOf("/")-1);
+                    sexoXML=sexoXML.substring(sexoXML.indexOf(">")+1,sexoXML.indexOf("/")-1);
+                    nomePaiXML=nomePaiXML.substring(nomePaiXML.indexOf(">")+1,nomePaiXML.indexOf("/")-1);
+                    nomeMaeXML=nomeMaeXML.substring(nomeMaeXML.indexOf(">")+1,nomeMaeXML.indexOf("/")-1);
+                    leitor.readLine(); //</aluno>
+                    
+                    //Colocar na tabela
+                    DefaultTableModel modeloTabelaXML = (DefaultTableModel)jTable1.getModel();  
+                    modeloTabelaXML.addRow( new String [] {"", ""+nomeXML,""} );
                 }
             }catch(Exception erro){}
         }    
