@@ -7,13 +7,18 @@ package my.programaofflineui;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import javax.swing.JCheckBox;
 import javax.swing.DefaultCellEditor;
@@ -30,13 +35,75 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
     /**
      * Creates new form CadastroAlunosUI
      */
+    public int    idEntrada;
+    public String cpfProf;
+    public int tamanhoAluno=1;
+    List raiz = new ArrayList(1);                    
+    List <Turmas> turmazin = new ArrayList(1);
+    List <Aluno> alunozin = new ArrayList(tamanhoAluno);                    
+    List <Testes> testezin = new ArrayList(1);
+    
     public CadastroAlunosUI() {
         initComponents();
         importarXML();
     }
+    public CadastroAlunosUI(String cpfProfessor){
+        initComponents();
+        importarXML();
+        this.cpfProf=cpfProfessor;
+    }
+    
+    //@XStreamAlias("listaXML")
+    public static class listaXML{
+        @XStreamAlias("professor")
+	private String professorCPF;    
+        
+	private Collection<Turmas> turmas = new ArrayList<Turmas>();
+	private Collection<Testes> testes = new ArrayList<Testes>();
 
+	public String getCpf(){
+		return this.professorCPF;
+	}
+	public void setCpf(String cpf){
+		this.professorCPF = cpf;
+	}
+	
+	public Collection<Turmas> getTurmas(){
+		return turmas;
+	}
+	public void setTurmas(Collection<Turmas> turma){
+		turmas=turma;
+	}
+	
+	public Collection<Testes> getTestes(){
+		return testes;
+	}
+	public void setTestes(Collection<Testes> teste){
+		testes=teste;
+	}
+    }
+    //@XStreamAlias("Turmas")
+    public static class Turmas{
+	private int idTurma;
+      //  @XStreamImplicit(itemFieldName = "alunosTurmas")  
+	private Collection<Aluno> alunosTurmas = new ArrayList<Aluno>();
+	
+	public int getIdTurma(){
+		return this.idTurma;
+	}
+	public void setIdTurma(int IdTurma){
+		this.idTurma = IdTurma;
+	}
+	public Collection<Aluno> getAlunos(){
+		return alunosTurmas;
+	}
+	public void setAlunos(Collection<Aluno> aluno){
+		alunosTurmas = aluno;
+	}
+    }    
+    //@XStreamAlias("Aluno")
     public static class Aluno {
-        public int    id=0;
+        public int id=0;
 	private String nome;
         private String dtNascimento;
         private String rg;
@@ -76,6 +143,110 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
             return this.id;
         }
     }    
+    //@XStreamAlias("Testes")
+    public static class Testes{
+	private int idAluno;
+        //SAUDE
+	private String abdominal;
+	private String imc;
+	private String sentar_e_alcancar;
+	private String sentar_e_alcancar_sb;
+	private String nove_min_s;
+	private String seis_min_s;
+        //DESEMPENHO MOTOR
+	private String arremeso_medicine_ball;
+	private String corrida_20_m;
+	private String quadrado;
+	private String salto_dist;
+	private String nove_min_dm;
+	private String seis_min_dm;
+        
+        public void setIdAluno(int id){
+            this.idAluno=id;
+        }
+        public int getIdAluno(){
+            return this.idAluno;
+        }        
+        //SETTERS SAUDE
+        public void setAbdominal(String abdominal){
+            this.abdominal=abdominal;
+        }
+        public void setImc(String imc){
+            this.imc=imc;
+        }
+        public void setSentarAlcancar(String sentaralcancar){
+            this.sentar_e_alcancar=sentaralcancar;
+        }
+        public void setSentarAlcancarSb(String sentaralcancarsb){
+            this.sentar_e_alcancar_sb=sentaralcancarsb;
+        }
+        public void setNoveMin(String novemin){
+            this.nove_min_s=novemin;
+        }
+        public void setSeisMin(String seismin){
+            this.seis_min_s=seismin;
+        }
+	
+        //GETTERS SAUDE
+        public String getAbdominal(){
+            return this.abdominal;
+        }
+        public String getImc(){
+            return this.imc;
+        }
+        public String getSentarAlcancar(){
+            return this.sentar_e_alcancar;
+        }
+        public String getSentarAlcancarSb(){
+            return this.sentar_e_alcancar_sb;
+        }
+        public String getNoveMin(){
+            return this.nove_min_s;
+        }
+        public String getSeisMin(){
+            return this.seis_min_s;
+        }
+        //SETTERS DESEMPENHO
+        public void setArremesso(String arremesso){
+            this.arremeso_medicine_ball=arremesso;
+        }
+        public void setcorrida_20_m(String corrida20m){
+            this.corrida_20_m=corrida20m;
+        }
+        public void setQuadrado(String quadrad){
+            this.quadrado=quadrad;
+        }
+        public void setSalto_dist(String salto){
+            this.salto_dist=salto;
+        }
+        public void setNoveMinDm(String noveDm){
+            this.nove_min_dm=noveDm;
+        }
+        public void setSeisMinDm(String seisDm){
+            this.seis_min_dm=seisDm;
+        }
+        //GETTERS
+        public String getArremesso(){
+            return this.arremeso_medicine_ball;
+        }
+        public String getCorrida_20_m(){
+            return this.corrida_20_m;
+        }
+        public String getQuadrado(){
+            return this.quadrado;
+        }
+        public String getSalto_dist(){
+            return this.salto_dist;
+        }
+        public String getNoveMinDm(){
+            return this.nove_min_dm;
+        }
+        public String getSeisMinDm(){
+            return this.seis_min_dm;
+        }
+
+}
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -108,6 +279,7 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -306,6 +478,13 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Cadastrar Teste");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -313,13 +492,17 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
                 .addGap(21, 21, 21))
         );
 
@@ -409,62 +592,80 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
                     
                     DefaultTableModel modeloTabelaXML = (DefaultTableModel)jTable1.getModel();  
                     modeloTabelaXML.addRow( new String [] {"", ""+nomeXML,""} );
-                
                 }
             }catch(Exception erro){}
         }    
     }
     
-    private void bttCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttCadastrarMouseClicked
-        String nomeArquivo = "Alunos.xml";
-        File arq = new File(nomeArquivo);
-        
-        if(arq.exists()){
-            JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!");
-        }else{
-            if(evt.getSource() == bttCadastrar){
-                XStream xstream = new XStream();
-                Aluno aluno = new Aluno();
-                List contatos = new ArrayList(1);
-
-                //IMPORTAR E CONTINUAR DO XML
-                aluno.setId(1);
-                aluno.setNome(txtNome.getText());
-                //aluno.setDtNascimento(txtDtNascimento.getCalendar());
-                aluno.setRg(txtRg.getText());
-                aluno.setCpf(txtCpf.getText());
-                aluno.setNomePai(txtNomePai.getText());
-                aluno.setNomeMae(txtNomeMae.getText());
-                aluno.setSexo(cmbSexo.getSelectedItem());
-
-                contatos.add(aluno);
-                String contatosEmXML = xstream.toXML(contatos);
-                System.out.println("\nContatos em XML:");  
-                System.out.println(contatosEmXML);  
-
-                FileOutputStream gravar;
-                try {
-                    gravar = new FileOutputStream(nomeArquivo);
-                    gravar.write(xstream.toXML(contatos).getBytes());
-                    gravar.close();
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-                
-                JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!");
-                
-                DefaultTableModel modeloTabela = (DefaultTableModel)jTable1.getModel();  
-                modeloTabela.addRow( new String [] {"", ""+txtNome.getText(),""} );
-                
-                txtNome.setText(null);
-                txtNomeMae.setText(null);
-                txtNomePai.setText(null);
-                txtRg.setText(null);
-                txtCpf.setText(null);
-                cmbSexo.setSelectedItem(null);
-            }
+    private static void salvarArquivo(String documento, String file) {
+        File path = new File("C:\\devmedia\\GitHub\\TrabalhoDS\\ProgramaOffline\\" + file);
+        try {
+            PrintWriter writer = new PrintWriter(path);
+            writer.println(
+            "<?xml version=\"1.0\" encoding=\"ISO-8859-1\" standalone=\"no\"?>"
+            );          
+            writer.println(documento);
+            writer.flush();
+            writer.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    } 
+    
+    private void bttCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttCadastrarMouseClicked
+        if(evt.getSource() == bttCadastrar){
+            String nomeArquivo = "Arquivo.xml";
+            File arq = new File(nomeArquivo);
+            XStream xstream = new XStream();
+            listaXML lista = new listaXML();
+            Turmas turma = new  Turmas();
+            Testes testes = new Testes();
+            Aluno aluno = new Aluno();
+
+            //ALUNO
+            aluno.setId(1);
+            aluno.setNome(txtNome.getText());
+            aluno.setRg(txtRg.getText());
+            aluno.setCpf(txtCpf.getText());
+            aluno.setNomePai(txtNomePai.getText());
+            aluno.setNomeMae(txtNomeMae.getText());
+            aluno.setSexo(cmbSexo.getSelectedItem());
+            xstream.alias("aluno", Aluno.class);
+            alunozin.add(aluno);
+            //Turma
+            turma.setIdTurma(1);
+            turma.setAlunos(alunozin);
+            xstream.alias("turma",Turmas.class);
+            turmazin.add(turma);
+            //TESTE
+            testes.setAbdominal("90");
+            testes.setImc("80");
+            //...
+            testezin.add(testes);
+            xstream.alias("teste",Testes.class);
+
+            //ListaRaiz
+            lista.setTurmas(turmazin);
+            lista.setTestes(testezin);
+            raiz.add(lista);
+            xstream.alias("Lista",listaXML.class);
+            
+            String documento = xstream.toXML(raiz);
+            salvarArquivo(documento,nomeArquivo);
+            JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!");
+            
+            DefaultTableModel modeloTabela = (DefaultTableModel)jTable1.getModel();  
+            modeloTabela.addRow( new String [] {"", ""+txtNome.getText(),""} );
+            txtNome.setText(null);
+            txtNomeMae.setText(null);
+            txtNomePai.setText(null);
+            txtRg.setText(null);
+            txtCpf.setText(null);
+            cmbSexo.setSelectedItem(null);
         evt.setSource(null);
+        }
     }//GEN-LAST:event_bttCadastrarMouseClicked
 
     private void bttCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttCadastrarActionPerformed
@@ -480,12 +681,20 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
             if(evt.getSource() == jButton1){
                 dispose();
-                TelaPrincipal tela = new TelaPrincipal();
+                TelaPrincipal tela = new TelaPrincipal(cpfProf);
                 tela.setVisible(true);
                 tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
             }
-
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+            if(evt.getSource() == jButton2){
+                dispose();
+                CadastroTestes tela = new CadastroTestes();
+                tela.setVisible(true);
+                tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            }
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -532,10 +741,9 @@ public class CadastroAlunosUI extends javax.swing.JFrame {
     private javax.swing.JButton bttCadastrar;
     private javax.swing.JComboBox cmbSexo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

@@ -5,8 +5,10 @@
 package my.programaofflineui;
 
 import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -17,21 +19,126 @@ import javax.swing.JOptionPane;
  */
 public class CadastroTestes extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CadastroTestes
-     */
+    private String cpfProf;
     public CadastroTestes() {
         initComponents();
     }
-    public static class TestesSaude{
-        private String abdominal;
+    
+    public CadastroTestes(String cpfProfessor) {
+        initComponents();
+        this.cpfProf=cpfProfessor;
+    }
+    
+    public static class listaXML{
+        @XStreamAlias("professor")
+	private String professorCPF;    
+        
+	private Collection<CadastroAlunosUI.Turmas> turmas = new ArrayList<CadastroAlunosUI.Turmas>();
+	private Collection<CadastroAlunosUI.Testes> testes = new ArrayList<CadastroAlunosUI.Testes>();
+
+	public String getCpf(){
+		return this.professorCPF;
+	}
+	public void setCpf(String cpf){
+		this.professorCPF = cpf;
+	}
+	
+	public Collection<CadastroAlunosUI.Turmas> getTurmas(){
+		return turmas;
+	}
+	public void setTurmas(Collection<CadastroAlunosUI.Turmas> turma){
+		turmas=turma;
+	}
+	
+	public Collection<CadastroAlunosUI.Testes> getTestes(){
+		return testes;
+	}
+	public void setTestes(Collection<CadastroAlunosUI.Testes> teste){
+		testes=teste;
+	}
+    }
+    public static class Turmas{
+	private int idTurma;
+	private Collection<CadastroAlunosUI.Aluno> alunosTurmas = new ArrayList<CadastroAlunosUI.Aluno>();
+	
+	public int getIdTurma(){
+		return this.idTurma;
+	}
+	public void setIdTurma(int IdTurma){
+		this.idTurma = IdTurma;
+	}
+	public Collection<CadastroAlunosUI.Aluno> getAlunos(){
+		return alunosTurmas;
+	}
+	public void setAlunos(Collection<CadastroAlunosUI.Aluno> aluno){
+		alunosTurmas = aluno;
+	}
+    }    
+    public static class Aluno {
+        public int id=0;
+	private String nome;
+        private String dtNascimento;
+        private String rg;
+        private String cpf;
+        private String sexo;
+	private String nomePai;
+        private String nomeMae;
+        
+        public void setId(int id){
+            this.id+=id;
+        }
+        public void setNome(String nome){
+            this.nome=nome;
+        }
+        public void setSexo(Object sexo){
+            this.sexo = sexo.toString();
+        }
+        public void setDtNascimento(String dtNascimento){
+            this.dtNascimento=dtNascimento;
+        }
+        public void setRg(String rg){
+            this.rg=rg;
+        }
+        public void setCpf(String cpf){
+            this.cpf=cpf;
+        }
+        public void setNomePai(String nomePai){
+            this.nomePai=nomePai;
+        }
+        public void setNomeMae(String nomeMae){
+            this.nomeMae = nomeMae;
+        }
+        public String getNome(){
+            return this.nome;
+        }
+        public int getId(){
+            return this.id;
+        }
+    }    
+    public static class Testes{
+	private int idAluno;
+        //SAUDE
+	private String abdominal;
 	private String imc;
 	private String sentar_e_alcancar;
 	private String sentar_e_alcancar_sb;
 	private String nove_min_s;
 	private String seis_min_s;
+        //DESEMPENHO MOTOR
+	private String arremeso_medicine_ball;
+	private String corrida_20_m;
+	private String quadrado;
+	private String salto_dist;
+	private String nove_min_dm;
+	private String seis_min_dm;
         
-        //Setters
+        public void setIdAluno(int id){
+            this.idAluno=id;
+        }
+        public int getIdAluno(){
+            return this.idAluno;
+        }        
+        //SETTERS SAUDE
         public void setAbdominal(String abdominal){
             this.abdominal=abdominal;
         }
@@ -50,37 +157,66 @@ public class CadastroTestes extends javax.swing.JFrame {
         public void setSeisMin(String seismin){
             this.seis_min_s=seismin;
         }
-    }
-
-
-    public static class TestesMotor{
-	private String arremeso_medicine_ball;
-	private String corrida_20_m;
-	private String quadrado;
-	private String salto_dist;
-	private String nove_min_dm;
-	private String seis_min_dm;
-        //Setters
-        public void setArremessoMedicineBall(String arremeso_medicine_ball){
-            this.arremeso_medicine_ball=arremeso_medicine_ball;
+	
+        //GETTERS SAUDE
+        public String getAbdominal(){
+            return this.abdominal;
         }
-        public void setCorridaVinteM(String corrida20m){
+        public String getImc(){
+            return this.imc;
+        }
+        public String getSentarAlcancar(){
+            return this.sentar_e_alcancar;
+        }
+        public String getSentarAlcancarSb(){
+            return this.sentar_e_alcancar_sb;
+        }
+        public String getNoveMin(){
+            return this.nove_min_s;
+        }
+        public String getSeisMin(){
+            return this.seis_min_s;
+        }
+        //SETTERS DESEMPENHO
+        public void setArremesso(String arremesso){
+            this.arremeso_medicine_ball=arremesso;
+        }
+        public void setcorrida_20_m(String corrida20m){
             this.corrida_20_m=corrida20m;
         }
-        public void setQuadrado(String quadrado){
-            this.quadrado=quadrado;
+        public void setQuadrado(String quadrad){
+            this.quadrado=quadrad;
         }
-        public void setSaltoDist(String saltodist){
-            this.salto_dist=saltodist;
+        public void setSalto_dist(String salto){
+            this.salto_dist=salto;
         }
-        public void setNoveMinDm(String novemindm){
-            this.nove_min_dm=novemindm;
+        public void setNoveMinDm(String noveDm){
+            this.nove_min_dm=noveDm;
         }
-        public void setSeisMinDm(String seismindm){
-            this.seis_min_dm=seismindm;
+        public void setSeisMinDm(String seisDm){
+            this.seis_min_dm=seisDm;
         }
-        
+        //GETTERS
+        public String getArremesso(){
+            return this.arremeso_medicine_ball;
+        }
+        public String getCorrida_20_m(){
+            return this.corrida_20_m;
+        }
+        public String getQuadrado(){
+            return this.quadrado;
+        }
+        public String getSalto_dist(){
+            return this.salto_dist;
+        }
+        public String getNoveMinDm(){
+            return this.nove_min_dm;
+        }
+        public String getSeisMinDm(){
+            return this.seis_min_dm;
+        }
     }
+        
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -719,30 +855,24 @@ public class CadastroTestes extends javax.swing.JFrame {
     private void bttCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttCadastrarMouseClicked
         if(evt.getSource() == bttCadastrar){
             XStream xstream = new XStream();
-            
             List testes = new ArrayList(1);
-           
-            TestesSaude testeSaude = new TestesSaude();
-            testeSaude.setAbdominal(txtAbdominal.getText());
-            testeSaude.setImc(txtIMC.getText());
-            testeSaude.setNoveMin(txtNove_min_s.getText());
-            testeSaude.setSeisMin(txtSeis_min_s.getText());
-            testeSaude.setSentarAlcancar(txtSentar_e_alcancar.getText());
-            testeSaude.setSentarAlcancarSb(txtSentar_e_alcancar_sb.getText());
-    
-            testes.add(testeSaude);
+            Testes teste = new Testes();
+
+            teste.setAbdominal(txtAbdominal.getText());
+            teste.setImc(txtIMC.getText());
+            teste.setNoveMin(txtNove_min_s.getText());
+            teste.setSeisMin(txtSeis_min_s.getText());
+            teste.setSentarAlcancar(txtSentar_e_alcancar.getText());
+            teste.setSentarAlcancarSb(txtSentar_e_alcancar_sb.getText());
+            teste.setArremesso(txtArremesso_medicine_ball.getText());
+            teste.setcorrida_20_m(txtCorrida_20m.getText());
+            teste.setNoveMinDm(txtNove_min_dm.getText());
+            teste.setQuadrado(txtQuadrado.getText());
+            teste.setSalto_dist(txtSalto_dist.getText());
+            teste.setSeisMinDm(txtSeis_min_dm.getText());
             
-            TestesMotor testeMotor = new TestesMotor();
-            
-            testeMotor.setArremessoMedicineBall(txtArremesso_medicine_ball.getText());
-            testeMotor.setCorridaVinteM(txtCorrida_20m.getText());
-            testeMotor.setNoveMinDm(txtNove_min_dm.getText());
-            testeMotor.setQuadrado(txtQuadrado.getText());
-            testeMotor.setSaltoDist(txtSalto_dist.getText());
-            testeMotor.setSeisMinDm(txtSeis_min_dm.getText());
-            
-            testes.add(testeMotor);
-            
+            testes.add(teste);
+            //CRIAR ARQUIVO
             JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!");
         }
     }//GEN-LAST:event_bttCadastrarMouseClicked
@@ -750,7 +880,7 @@ public class CadastroTestes extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
             if(evt.getSource()==jButton1){
                 dispose();
-                TelaPrincipal tela = new TelaPrincipal();
+                TelaPrincipal tela = new TelaPrincipal(this.cpfProf);
                 tela.setVisible(true);
                 tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
             }
